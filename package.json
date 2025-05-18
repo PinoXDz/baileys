@@ -1,17 +1,14 @@
 {
   "name": "naruyaizumi",
-  "version": "25.9.0",
-  "description": "meta.com",
+  "version": "25.9.1",
+  "description": "baileys whatsapp-api",
   "keywords": [
-    "whatsapp-api",
-    "automation",
     "whatsapp",
-    "baileys",
-    "meta"
+    "baileys"
   ],
-  "homepage": "https://developers.meta.com",
+  "homepage": "https://github.com/naruyaizumi/baileys",
   "repository": {
-    "url": "https://developers.meta.com"
+    "url": "https://github.com/naruyaizumi/baileys"
   },
   "license": "MIT",
   "author": "Naruya Izumi",
@@ -34,7 +31,7 @@
     "cache-manager": "^6.4.3",
     "jimp": "^1.6.0",
     "libsignal": "npm:@meta.inc/libsignal",
-    "link-preview-js": "^3.0.14",
+    "link-preview-js": "^3.0.15",
     "lodash": "^4.17.21",
     "music-metadata": "^11.2.2",
     "pino": "^9.6",
@@ -43,11 +40,11 @@
     "sharp": "^0.34.1",
     "ws": "^8.18.2"
   },
-  "packageManager": "yarn@1.22.22",
   "engines": {
     "node": ">=20.0.0"
   },
   "directories": {
     "lib": "lib"
-  }
+  },
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
