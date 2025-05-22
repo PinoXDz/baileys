@@ -13,6 +13,7 @@
   "license": "MIT",
   "author": "Naruya Izumi",
   "main": "lib/index.js",
+  "type": "module",
   "files": [
     "lib/*",
     "WAProto/*",
