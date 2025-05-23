@@ -4,11 +4,41 @@
 
 ![WhatsApp API](https://i.supa.codes/kyWCSZ)
 
-</div>
-
 <p align="center">
-  <a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js->=20.0.0-green?logo=node.js" alt="Node.js"></a>
-  <a href="https://www.npmjs.com/package/naruyaizumi"><img src="https://img.shields.io/npm/v/naruyaizumi?color=blue&label=naruyaizumi&logo=npm" alt="npm version"></a>
+  <!-- Node.js version -->
+  <a href="https://nodejs.org">
+    <img src="https://img.shields.io/badge/Node.js-%3E=20.0.0-green?logo=node.js" alt="Node.js">
+  </a>
+
+  <!-- NPM version -->
+  <a href="https://www.npmjs.com/package/naruyaizumi">
+    <img src="https://img.shields.io/npm/v/naruyaizumi?color=blue&label=naruyaizumi&logo=npm" alt="npm version">
+  </a>
+
+  <!-- NPM total downloads -->
+  <a href="https://www.npmjs.com/package/naruyaizumi">
+    <img src="https://img.shields.io/npm/dt/naruyaizumi?label=downloads&logo=npm" alt="npm downloads">
+  </a>
+
+  <!-- GitHub Stars -->
+  <a href="https://github.com/naruyaizumi/baileys">
+    <img src="https://img.shields.io/github/stars/naruyaizumi/baileys?style=social" alt="GitHub stars">
+  </a>
+
+  <!-- WhatsApp Channel -->
+  <a href="https://whatsapp.com/channel/0029Vb5vz4oDjiOfUeW2Mt03">
+    <img src="https://img.shields.io/badge/WhatsApp-Channel-25D366?logo=whatsapp&logoColor=white" alt="WhatsApp Channel">
+  </a>
+
+  <!-- GitHub Repo -->
+  <a href="https://github.com/naruyaizumi">
+    <img src="https://img.shields.io/badge/GitHub-naruyaizumi-181717?logo=github" alt="GitHub Profile">
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://instagram.com/naruyaizumi_">
+    <img src="https://img.shields.io/badge/Instagram-@naruyaizumi-E4405F?logo=instagram&logoColor=white" alt="Instagram">
+  </a>
 </p>
 
 Baileys adalah library TypeScript berbasis WebSocket untuk berinteraksi dengan WhatsApp Web API.
