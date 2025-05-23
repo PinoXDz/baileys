@@ -11,18 +11,18 @@
   </a>
 
   <!-- NPM version -->
-  <a href="https://www.npmjs.com/package/naruyaizumi">
-    <img src="https://img.shields.io/npm/v/naruyaizumi?color=blue&label=naruyaizumi&logo=npm" alt="npm version">
+  <a href="https://www.npmjs.com/package/PinoXDz">
+    <img src="https://img.shields.io/npm/v/PinoXDz?color=blue&label=PinoXDz&logo=npm" alt="npm version">
   </a>
 
   <!-- NPM total downloads -->
-  <a href="https://www.npmjs.com/package/naruyaizumi">
-    <img src="https://img.shields.io/npm/dt/naruyaizumi?label=downloads&logo=npm" alt="npm downloads">
+  <a href="https://www.npmjs.com/package/PinoXDz">
+    <img src="https://img.shields.io/npm/dt/PinoXDz?label=downloads&logo=npm" alt="npm downloads">
   </a>
 
   <!-- GitHub Stars -->
-  <a href="https://github.com/naruyaizumi/baileys">
-    <img src="https://img.shields.io/github/stars/naruyaizumi/baileys?style=social" alt="GitHub stars">
+  <a href="https://github.com/PinoXDz/baileys">
+    <img src="https://img.shields.io/github/stars/PinoXDz/baileys?style=social" alt="GitHub stars">
   </a>
 
   <!-- WhatsApp Channel -->
@@ -31,13 +31,13 @@
   </a>
 
   <!-- GitHub Repo -->
-  <a href="https://github.com/naruyaizumi">
-    <img src="https://img.shields.io/badge/GitHub-naruyaizumi-181717?logo=github" alt="GitHub Profile">
+  <a href="https://github.com/PinoXDz">
+    <img src="https://img.shields.io/badge/GitHub-PinoXDz-181717?logo=github" alt="GitHub Profile">
   </a>
 
   <!-- Instagram -->
-  <a href="https://instagram.com/naruyaizumi_">
-    <img src="https://img.shields.io/badge/Instagram-@naruyaizumi-E4405F?logo=instagram&logoColor=white" alt="Instagram">
+  <a href="https://instagram.com/PinoXDz_">
+    <img src="https://img.shields.io/badge/Instagram-@PinoXDz-E4405F?logo=instagram&logoColor=white" alt="Instagram">
   </a>
 </p>
 
@@ -81,13 +81,13 @@ Modifikasi ini difokuskan untuk membuat versi yang **sepenuhnya berbasis JavaScr
 Gunakan salah satu manajer paket berikut untuk menginstal versi stabil:
 
 ```bash
-npm install naruyaizumi
+npm install PinoXDz
 ```
 ```bash
-yarn add naruyaizumi
+yarn add PinoXDz
 ```
 ```bash
-pnpm add naruyaizumi
+pnpm add PinoXDz
 ```
 ## Informasi
 
@@ -99,7 +99,7 @@ Proyek ini secara eksplisit ditujukan untuk lingkungan modern dan tidak mendukun
 
 > **Copyright © 2024 - 2025 Naruya Izumi**
 
-[꒰⚘꒱ Admin Contact ꒱⟡](https://linkbio.co/naruyaizumi)
+[꒰⚘꒱ Admin Contact ꒱⟡](https://linkbio.co/PinoXDz)
 
 
 ## Menghubungkan Akun
@@ -115,7 +115,7 @@ Kamu bisa menghubungkan akun dengan dua metode utama: **Kode QR** atau **Kode Pa
 > [https://baileys.whiskeysockets.io/types/BrowsersMap.html](https://baileys.whiskeysockets.io/types/BrowsersMap.html)
 
 ```javascript
-import makeWASocket, { Browsers } from 'naruyaizumi'
+import makeWASocket, { Browsers } from 'PinoXDz'
 
 const sock = makeWASocket({
   browser: Browsers.ubuntu('Safari'),
@@ -131,7 +131,7 @@ Pindai kode tersebut menggunakan aplikasi WhatsApp di ponsel kamu untuk login.
 Jika kamu menggunakan Node.js dengan format CommonJS (`require`), gunakan contoh berikut:
 
 ```javascript
-const { default: makeWASocket, Browsers } = require('naruyaizumi')
+const { default: makeWASocket, Browsers } = require('PinoXDz')
 
 const sock = makeWASocket({
   browser: Browsers.ubuntu('Safari'),
@@ -152,7 +152,7 @@ Nomor telepon **tidak boleh menggunakan karakter** seperti `+`, `()` atau `-`.
 Gunakan hanya angka dan pastikan menyertakan kode negara.
 
 ```javascript
-import makeWASocket from 'naruyaizumi'
+import makeWASocket from 'PinoXDz'
 
 const sock = makeWASocket({
   // Konfigurasi tambahan dapat disesuaikan di sini
@@ -177,7 +177,7 @@ Setelah pairing code berhasil dibuat, masukkan kode tersebut melalui WhatsApp We
    Jika kamu ingin **meniru koneksi desktop** (dan menerima riwayat pesan yang lebih banyak), gunakan konfigurasi browser seperti contoh di bawah ini.
 
 ```javascript
-import makeWASocket, { Browsers } from 'naruyaizumi'
+import makeWASocket, { Browsers } from 'PinoXDz'
 
 const sock = makeWASocket({
   ...otherOpts,
@@ -199,7 +199,7 @@ const sock = makeWASocket({
 - Kamu perlu mengimplementasikan sistem cache sederhana seperti contoh berikut:
 
 ```javascript
-import makeWASocket from 'naruyaizumi'
+import makeWASocket from 'PinoXDz'
 import NodeCache from 'node-cache'
 
 const groupCache = new NodeCache({ stdTTL: 5 * 60, useClones: false })
@@ -330,7 +330,7 @@ Seluruh event telah diketik (typed) dengan baik, sehingga editor seperti **VS Co
 Contoh penggunaan listener untuk menangani pesan masuk:
 
 ```javascript
-import makeWASocket from 'naruyaizumi'
+import makeWASocket from 'PinoXDz'
 
 const sock = makeWASocket()
 
@@ -422,7 +422,7 @@ Tentu kamu tidak ingin terus-menerus memindai QR code setiap kali ingin terkonek
 Kamu bisa menyimpan kredensial dan menggunakannya kembali saat login berikutnya:
 
 ```javascript
-import makeWASocket, { useMultiFileAuthState } from 'naruyaizumi'
+import makeWASocket, { useMultiFileAuthState } from 'PinoXDz'
 
 const { state, saveCreds } = await useMultiFileAuthState('auth_info_baileys')
 
@@ -484,7 +484,7 @@ Dengan cara ini, kamu bisa memisahkan sesi tiap user tanpa saling bentrok.
 > Contoh ini juga sudah mencakup penyimpanan kredensial secara otomatis
 
 ```javascript
-import makeWASocket, { DisconnectReason, useMultiFileAuthState } from 'naruyaizumi'
+import makeWASocket, { DisconnectReason, useMultiFileAuthState } from 'PinoXDz'
 import { Boom } from '@hapi/boom'
 
 async function connectToWhatsApp () {
@@ -532,7 +532,7 @@ connectToWhatsApp()
 import makeWASocket, {
   useSingleFileAuthState,
   useMongoFileAuthState
-} from 'naruyaizumi'
+} from 'PinoXDz'
 
 // Autentikasi menggunakan file tunggal (Single File Auth)
 const { state, saveState } = await useSingleFileAuthState('./auth_info_baileys.json')
@@ -554,7 +554,7 @@ const connectAuth = async () => {
 
   console.log('Berhasil terhubung ke MongoDB')
 
-  const collection = client.db('naruyaizumi').collection('sessions')
+  const collection = client.db('PinoXDz').collection('sessions')
   const { state, saveCreds } = await useMongoFileAuthState(collection)
 
   const sock = makeWASocket({
@@ -584,9 +584,9 @@ import pino from 'pino'
 import {
   makeInMemoryStore,
   getAggregateVotesInPollMessage
-} from 'naruyaizumi'
+} from 'PinoXDz'
 
-const logger = pino({ timestamp: () => `,"time":"${new Date().toJSON()}"` }).child({ class: 'NaruyaIzumi' })
+const logger = pino({ timestamp: () => `,"time":"${new Date().toJSON()}"` }).child({ class: 'PinoXDz' })
 logger.level = 'fatal'
 const store = makeInMemoryStore({ logger })
 
@@ -664,7 +664,7 @@ Namun, tersedia implementasi sederhana menggunakan **in-memory store**. Store in
 ### Contoh Penggunaan Store
 
 ```javascript
-import makeWASocket, { makeInMemoryStore } from 'naruyaizumi'
+import makeWASocket, { makeInMemoryStore } from 'PinoXDz'
 
 // Store akan menyimpan data koneksi WhatsApp dalam memori
 const store = makeInMemoryStore({})
@@ -2173,7 +2173,7 @@ Jika kamu ingin menyimpan media yang diterima dari pengguna:
 
 ```javascript
 import { createWriteStream } from 'fs'
-import { downloadMediaMessage, getContentType } from 'naruyaizumi'
+import { downloadMediaMessage, getContentType } from 'PinoXDz'
 
 sock.ev.on('messages.upsert', async ({ messages }) => {
 let m = messages[0]
