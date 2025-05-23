@@ -87,7 +87,7 @@ message WallpaperSettings {
 }
 
 message GroupParticipant {
-    required string userJid = 1;
+    optional string userJid = 1;
     optional Rank rank = 2;
     enum Rank {
         REGULAR = 0;
@@ -119,7 +119,7 @@ message PhoneNumberToLIDMapping {
 }
 
 message Conversation {
-    required string id = 1;
+    optional string id = 1;
     repeated HistorySyncMsg messages = 2;
     optional string newJid = 3;
     optional string oldJid = 4;
@@ -180,7 +180,7 @@ message Conversation {
 }
 
 message HistorySync {
-    required HistorySyncType syncType = 1;
+    optional HistorySyncType syncType = 1;
     repeated Conversation conversations = 2;
     repeated Web.WebMessageInfo statusV3Messages = 3;
     optional uint32 chunkOrder = 5;

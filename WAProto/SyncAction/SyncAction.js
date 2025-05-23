@@ -1,4 +1,4 @@
-/*eslint-disable no-prototype-builtins, no-redeclare*/
+/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
 "use strict";
 
 var $protobuf = require("protobufjs/minimal");
@@ -143,67 +143,122 @@ $root.SyncAction = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * PatchDebugData _currentLthash.
+         * @member {"currentLthash"|undefined} _currentLthash
+         * @memberof SyncAction.PatchDebugData
+         * @instance
+         */
         Object.defineProperty(PatchDebugData.prototype, "_currentLthash", {
             get: $util.oneOfGetter($oneOfFields = ["currentLthash"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * PatchDebugData _newLthash.
+         * @member {"newLthash"|undefined} _newLthash
+         * @memberof SyncAction.PatchDebugData
+         * @instance
+         */
         Object.defineProperty(PatchDebugData.prototype, "_newLthash", {
             get: $util.oneOfGetter($oneOfFields = ["newLthash"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * PatchDebugData _patchVersion.
+         * @member {"patchVersion"|undefined} _patchVersion
+         * @memberof SyncAction.PatchDebugData
+         * @instance
+         */
         Object.defineProperty(PatchDebugData.prototype, "_patchVersion", {
             get: $util.oneOfGetter($oneOfFields = ["patchVersion"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * PatchDebugData _collectionName.
+         * @member {"collectionName"|undefined} _collectionName
+         * @memberof SyncAction.PatchDebugData
+         * @instance
+         */
         Object.defineProperty(PatchDebugData.prototype, "_collectionName", {
             get: $util.oneOfGetter($oneOfFields = ["collectionName"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * PatchDebugData _firstFourBytesFromAHashOfSnapshotMacKey.
+         * @member {"firstFourBytesFromAHashOfSnapshotMacKey"|undefined} _firstFourBytesFromAHashOfSnapshotMacKey
+         * @memberof SyncAction.PatchDebugData
+         * @instance
+         */
         Object.defineProperty(PatchDebugData.prototype, "_firstFourBytesFromAHashOfSnapshotMacKey", {
             get: $util.oneOfGetter($oneOfFields = ["firstFourBytesFromAHashOfSnapshotMacKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * PatchDebugData _newLthashSubtract.
+         * @member {"newLthashSubtract"|undefined} _newLthashSubtract
+         * @memberof SyncAction.PatchDebugData
+         * @instance
+         */
         Object.defineProperty(PatchDebugData.prototype, "_newLthashSubtract", {
             get: $util.oneOfGetter($oneOfFields = ["newLthashSubtract"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * PatchDebugData _numberAdd.
+         * @member {"numberAdd"|undefined} _numberAdd
+         * @memberof SyncAction.PatchDebugData
+         * @instance
+         */
         Object.defineProperty(PatchDebugData.prototype, "_numberAdd", {
             get: $util.oneOfGetter($oneOfFields = ["numberAdd"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * PatchDebugData _numberRemove.
+         * @member {"numberRemove"|undefined} _numberRemove
+         * @memberof SyncAction.PatchDebugData
+         * @instance
+         */
         Object.defineProperty(PatchDebugData.prototype, "_numberRemove", {
             get: $util.oneOfGetter($oneOfFields = ["numberRemove"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * PatchDebugData _numberOverride.
+         * @member {"numberOverride"|undefined} _numberOverride
+         * @memberof SyncAction.PatchDebugData
+         * @instance
+         */
         Object.defineProperty(PatchDebugData.prototype, "_numberOverride", {
             get: $util.oneOfGetter($oneOfFields = ["numberOverride"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * PatchDebugData _senderPlatform.
+         * @member {"senderPlatform"|undefined} _senderPlatform
+         * @memberof SyncAction.PatchDebugData
+         * @instance
+         */
         Object.defineProperty(PatchDebugData.prototype, "_senderPlatform", {
             get: $util.oneOfGetter($oneOfFields = ["senderPlatform"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * PatchDebugData _isSenderPrimary.
+         * @member {"isSenderPrimary"|undefined} _isSenderPrimary
+         * @memberof SyncAction.PatchDebugData
+         * @instance
+         */
         Object.defineProperty(PatchDebugData.prototype, "_isSenderPrimary", {
             get: $util.oneOfGetter($oneOfFields = ["isSenderPrimary"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -282,12 +337,14 @@ $root.SyncAction = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        PatchDebugData.decode = function decode(reader, length) {
+        PatchDebugData.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.PatchDebugData();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
                 case 1: {
                         message.currentLthash = reader.bytes();
@@ -726,25 +783,45 @@ $root.SyncAction = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionData _index.
+         * @member {"index"|undefined} _index
+         * @memberof SyncAction.SyncActionData
+         * @instance
+         */
         Object.defineProperty(SyncActionData.prototype, "_index", {
             get: $util.oneOfGetter($oneOfFields = ["index"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionData _value.
+         * @member {"value"|undefined} _value
+         * @memberof SyncAction.SyncActionData
+         * @instance
+         */
         Object.defineProperty(SyncActionData.prototype, "_value", {
             get: $util.oneOfGetter($oneOfFields = ["value"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionData _padding.
+         * @member {"padding"|undefined} _padding
+         * @memberof SyncAction.SyncActionData
+         * @instance
+         */
         Object.defineProperty(SyncActionData.prototype, "_padding", {
             get: $util.oneOfGetter($oneOfFields = ["padding"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionData _version.
+         * @member {"version"|undefined} _version
+         * @memberof SyncAction.SyncActionData
+         * @instance
+         */
         Object.defineProperty(SyncActionData.prototype, "_version", {
             get: $util.oneOfGetter($oneOfFields = ["version"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -809,12 +886,14 @@ $root.SyncAction = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncActionData.decode = function decode(reader, length) {
+        SyncActionData.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionData();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
                 case 1: {
                         message.index = reader.bytes();
@@ -1530,343 +1609,628 @@ $root.SyncAction = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _timestamp.
+         * @member {"timestamp"|undefined} _timestamp
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_timestamp", {
             get: $util.oneOfGetter($oneOfFields = ["timestamp"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _starAction.
+         * @member {"starAction"|undefined} _starAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_starAction", {
             get: $util.oneOfGetter($oneOfFields = ["starAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _contactAction.
+         * @member {"contactAction"|undefined} _contactAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_contactAction", {
             get: $util.oneOfGetter($oneOfFields = ["contactAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _muteAction.
+         * @member {"muteAction"|undefined} _muteAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_muteAction", {
             get: $util.oneOfGetter($oneOfFields = ["muteAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _pinAction.
+         * @member {"pinAction"|undefined} _pinAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_pinAction", {
             get: $util.oneOfGetter($oneOfFields = ["pinAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _securityNotificationSetting.
+         * @member {"securityNotificationSetting"|undefined} _securityNotificationSetting
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_securityNotificationSetting", {
             get: $util.oneOfGetter($oneOfFields = ["securityNotificationSetting"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _pushNameSetting.
+         * @member {"pushNameSetting"|undefined} _pushNameSetting
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_pushNameSetting", {
             get: $util.oneOfGetter($oneOfFields = ["pushNameSetting"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _quickReplyAction.
+         * @member {"quickReplyAction"|undefined} _quickReplyAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_quickReplyAction", {
             get: $util.oneOfGetter($oneOfFields = ["quickReplyAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _recentEmojiWeightsAction.
+         * @member {"recentEmojiWeightsAction"|undefined} _recentEmojiWeightsAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_recentEmojiWeightsAction", {
             get: $util.oneOfGetter($oneOfFields = ["recentEmojiWeightsAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _labelEditAction.
+         * @member {"labelEditAction"|undefined} _labelEditAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_labelEditAction", {
             get: $util.oneOfGetter($oneOfFields = ["labelEditAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _labelAssociationAction.
+         * @member {"labelAssociationAction"|undefined} _labelAssociationAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_labelAssociationAction", {
             get: $util.oneOfGetter($oneOfFields = ["labelAssociationAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _localeSetting.
+         * @member {"localeSetting"|undefined} _localeSetting
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_localeSetting", {
             get: $util.oneOfGetter($oneOfFields = ["localeSetting"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _archiveChatAction.
+         * @member {"archiveChatAction"|undefined} _archiveChatAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_archiveChatAction", {
             get: $util.oneOfGetter($oneOfFields = ["archiveChatAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _deleteMessageForMeAction.
+         * @member {"deleteMessageForMeAction"|undefined} _deleteMessageForMeAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_deleteMessageForMeAction", {
             get: $util.oneOfGetter($oneOfFields = ["deleteMessageForMeAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _keyExpiration.
+         * @member {"keyExpiration"|undefined} _keyExpiration
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_keyExpiration", {
             get: $util.oneOfGetter($oneOfFields = ["keyExpiration"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _markChatAsReadAction.
+         * @member {"markChatAsReadAction"|undefined} _markChatAsReadAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_markChatAsReadAction", {
             get: $util.oneOfGetter($oneOfFields = ["markChatAsReadAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _clearChatAction.
+         * @member {"clearChatAction"|undefined} _clearChatAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_clearChatAction", {
             get: $util.oneOfGetter($oneOfFields = ["clearChatAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _deleteChatAction.
+         * @member {"deleteChatAction"|undefined} _deleteChatAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_deleteChatAction", {
             get: $util.oneOfGetter($oneOfFields = ["deleteChatAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _unarchiveChatsSetting.
+         * @member {"unarchiveChatsSetting"|undefined} _unarchiveChatsSetting
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_unarchiveChatsSetting", {
             get: $util.oneOfGetter($oneOfFields = ["unarchiveChatsSetting"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _primaryFeature.
+         * @member {"primaryFeature"|undefined} _primaryFeature
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_primaryFeature", {
             get: $util.oneOfGetter($oneOfFields = ["primaryFeature"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _androidUnsupportedActions.
+         * @member {"androidUnsupportedActions"|undefined} _androidUnsupportedActions
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_androidUnsupportedActions", {
             get: $util.oneOfGetter($oneOfFields = ["androidUnsupportedActions"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _agentAction.
+         * @member {"agentAction"|undefined} _agentAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_agentAction", {
             get: $util.oneOfGetter($oneOfFields = ["agentAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _subscriptionAction.
+         * @member {"subscriptionAction"|undefined} _subscriptionAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_subscriptionAction", {
             get: $util.oneOfGetter($oneOfFields = ["subscriptionAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _userStatusMuteAction.
+         * @member {"userStatusMuteAction"|undefined} _userStatusMuteAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_userStatusMuteAction", {
             get: $util.oneOfGetter($oneOfFields = ["userStatusMuteAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _timeFormatAction.
+         * @member {"timeFormatAction"|undefined} _timeFormatAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_timeFormatAction", {
             get: $util.oneOfGetter($oneOfFields = ["timeFormatAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _nuxAction.
+         * @member {"nuxAction"|undefined} _nuxAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_nuxAction", {
             get: $util.oneOfGetter($oneOfFields = ["nuxAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _primaryVersionAction.
+         * @member {"primaryVersionAction"|undefined} _primaryVersionAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_primaryVersionAction", {
             get: $util.oneOfGetter($oneOfFields = ["primaryVersionAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _stickerAction.
+         * @member {"stickerAction"|undefined} _stickerAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_stickerAction", {
             get: $util.oneOfGetter($oneOfFields = ["stickerAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _removeRecentStickerAction.
+         * @member {"removeRecentStickerAction"|undefined} _removeRecentStickerAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_removeRecentStickerAction", {
             get: $util.oneOfGetter($oneOfFields = ["removeRecentStickerAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _chatAssignment.
+         * @member {"chatAssignment"|undefined} _chatAssignment
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_chatAssignment", {
             get: $util.oneOfGetter($oneOfFields = ["chatAssignment"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _chatAssignmentOpenedStatus.
+         * @member {"chatAssignmentOpenedStatus"|undefined} _chatAssignmentOpenedStatus
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_chatAssignmentOpenedStatus", {
             get: $util.oneOfGetter($oneOfFields = ["chatAssignmentOpenedStatus"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _pnForLidChatAction.
+         * @member {"pnForLidChatAction"|undefined} _pnForLidChatAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_pnForLidChatAction", {
             get: $util.oneOfGetter($oneOfFields = ["pnForLidChatAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _marketingMessageAction.
+         * @member {"marketingMessageAction"|undefined} _marketingMessageAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_marketingMessageAction", {
             get: $util.oneOfGetter($oneOfFields = ["marketingMessageAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _marketingMessageBroadcastAction.
+         * @member {"marketingMessageBroadcastAction"|undefined} _marketingMessageBroadcastAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_marketingMessageBroadcastAction", {
             get: $util.oneOfGetter($oneOfFields = ["marketingMessageBroadcastAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _externalWebBetaAction.
+         * @member {"externalWebBetaAction"|undefined} _externalWebBetaAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_externalWebBetaAction", {
             get: $util.oneOfGetter($oneOfFields = ["externalWebBetaAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _privacySettingRelayAllCalls.
+         * @member {"privacySettingRelayAllCalls"|undefined} _privacySettingRelayAllCalls
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_privacySettingRelayAllCalls", {
             get: $util.oneOfGetter($oneOfFields = ["privacySettingRelayAllCalls"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _callLogAction.
+         * @member {"callLogAction"|undefined} _callLogAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_callLogAction", {
             get: $util.oneOfGetter($oneOfFields = ["callLogAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _statusPrivacy.
+         * @member {"statusPrivacy"|undefined} _statusPrivacy
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_statusPrivacy", {
             get: $util.oneOfGetter($oneOfFields = ["statusPrivacy"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _botWelcomeRequestAction.
+         * @member {"botWelcomeRequestAction"|undefined} _botWelcomeRequestAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_botWelcomeRequestAction", {
             get: $util.oneOfGetter($oneOfFields = ["botWelcomeRequestAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _deleteIndividualCallLog.
+         * @member {"deleteIndividualCallLog"|undefined} _deleteIndividualCallLog
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_deleteIndividualCallLog", {
             get: $util.oneOfGetter($oneOfFields = ["deleteIndividualCallLog"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _labelReorderingAction.
+         * @member {"labelReorderingAction"|undefined} _labelReorderingAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_labelReorderingAction", {
             get: $util.oneOfGetter($oneOfFields = ["labelReorderingAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _paymentInfoAction.
+         * @member {"paymentInfoAction"|undefined} _paymentInfoAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_paymentInfoAction", {
             get: $util.oneOfGetter($oneOfFields = ["paymentInfoAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _customPaymentMethodsAction.
+         * @member {"customPaymentMethodsAction"|undefined} _customPaymentMethodsAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_customPaymentMethodsAction", {
             get: $util.oneOfGetter($oneOfFields = ["customPaymentMethodsAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _lockChatAction.
+         * @member {"lockChatAction"|undefined} _lockChatAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_lockChatAction", {
             get: $util.oneOfGetter($oneOfFields = ["lockChatAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _chatLockSettings.
+         * @member {"chatLockSettings"|undefined} _chatLockSettings
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_chatLockSettings", {
             get: $util.oneOfGetter($oneOfFields = ["chatLockSettings"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _wamoUserIdentifierAction.
+         * @member {"wamoUserIdentifierAction"|undefined} _wamoUserIdentifierAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_wamoUserIdentifierAction", {
             get: $util.oneOfGetter($oneOfFields = ["wamoUserIdentifierAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _privacySettingDisableLinkPreviewsAction.
+         * @member {"privacySettingDisableLinkPreviewsAction"|undefined} _privacySettingDisableLinkPreviewsAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_privacySettingDisableLinkPreviewsAction", {
             get: $util.oneOfGetter($oneOfFields = ["privacySettingDisableLinkPreviewsAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _deviceCapabilities.
+         * @member {"deviceCapabilities"|undefined} _deviceCapabilities
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_deviceCapabilities", {
             get: $util.oneOfGetter($oneOfFields = ["deviceCapabilities"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _noteEditAction.
+         * @member {"noteEditAction"|undefined} _noteEditAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_noteEditAction", {
             get: $util.oneOfGetter($oneOfFields = ["noteEditAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _favoritesAction.
+         * @member {"favoritesAction"|undefined} _favoritesAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_favoritesAction", {
             get: $util.oneOfGetter($oneOfFields = ["favoritesAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _merchantPaymentPartnerAction.
+         * @member {"merchantPaymentPartnerAction"|undefined} _merchantPaymentPartnerAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_merchantPaymentPartnerAction", {
             get: $util.oneOfGetter($oneOfFields = ["merchantPaymentPartnerAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _waffleAccountLinkStateAction.
+         * @member {"waffleAccountLinkStateAction"|undefined} _waffleAccountLinkStateAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_waffleAccountLinkStateAction", {
             get: $util.oneOfGetter($oneOfFields = ["waffleAccountLinkStateAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _usernameChatStartMode.
+         * @member {"usernameChatStartMode"|undefined} _usernameChatStartMode
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_usernameChatStartMode", {
             get: $util.oneOfGetter($oneOfFields = ["usernameChatStartMode"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _notificationActivitySettingAction.
+         * @member {"notificationActivitySettingAction"|undefined} _notificationActivitySettingAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_notificationActivitySettingAction", {
             get: $util.oneOfGetter($oneOfFields = ["notificationActivitySettingAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _lidContactAction.
+         * @member {"lidContactAction"|undefined} _lidContactAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_lidContactAction", {
             get: $util.oneOfGetter($oneOfFields = ["lidContactAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _ctwaPerCustomerDataSharingAction.
+         * @member {"ctwaPerCustomerDataSharingAction"|undefined} _ctwaPerCustomerDataSharingAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_ctwaPerCustomerDataSharingAction", {
             get: $util.oneOfGetter($oneOfFields = ["ctwaPerCustomerDataSharingAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * SyncActionValue _paymentTosAction.
+         * @member {"paymentTosAction"|undefined} _paymentTosAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
         Object.defineProperty(SyncActionValue.prototype, "_paymentTosAction", {
             get: $util.oneOfGetter($oneOfFields = ["paymentTosAction"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -2037,12 +2401,14 @@ $root.SyncAction = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        SyncActionValue.decode = function decode(reader, length) {
+        SyncActionValue.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
                 case 1: {
                         message.timestamp = reader.int64();
@@ -3451,19 +3817,34 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * AgentAction _name.
+             * @member {"name"|undefined} _name
+             * @memberof SyncAction.SyncActionValue.AgentAction
+             * @instance
+             */
             Object.defineProperty(AgentAction.prototype, "_name", {
                 get: $util.oneOfGetter($oneOfFields = ["name"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * AgentAction _deviceID.
+             * @member {"deviceID"|undefined} _deviceID
+             * @memberof SyncAction.SyncActionValue.AgentAction
+             * @instance
+             */
             Object.defineProperty(AgentAction.prototype, "_deviceID", {
                 get: $util.oneOfGetter($oneOfFields = ["deviceID"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * AgentAction _isDeleted.
+             * @member {"isDeleted"|undefined} _isDeleted
+             * @memberof SyncAction.SyncActionValue.AgentAction
+             * @instance
+             */
             Object.defineProperty(AgentAction.prototype, "_isDeleted", {
                 get: $util.oneOfGetter($oneOfFields = ["isDeleted"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -3526,12 +3907,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AgentAction.decode = function decode(reader, length) {
+            AgentAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.AgentAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.name = reader.string();
@@ -3715,7 +4098,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * AndroidUnsupportedActions _allowed.
+             * @member {"allowed"|undefined} _allowed
+             * @memberof SyncAction.SyncActionValue.AndroidUnsupportedActions
+             * @instance
+             */
             Object.defineProperty(AndroidUnsupportedActions.prototype, "_allowed", {
                 get: $util.oneOfGetter($oneOfFields = ["allowed"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -3774,12 +4162,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AndroidUnsupportedActions.decode = function decode(reader, length) {
+            AndroidUnsupportedActions.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.AndroidUnsupportedActions();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.allowed = reader.bool();
@@ -3940,13 +4330,23 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ArchiveChatAction _archived.
+             * @member {"archived"|undefined} _archived
+             * @memberof SyncAction.SyncActionValue.ArchiveChatAction
+             * @instance
+             */
             Object.defineProperty(ArchiveChatAction.prototype, "_archived", {
                 get: $util.oneOfGetter($oneOfFields = ["archived"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ArchiveChatAction _messageRange.
+             * @member {"messageRange"|undefined} _messageRange
+             * @memberof SyncAction.SyncActionValue.ArchiveChatAction
+             * @instance
+             */
             Object.defineProperty(ArchiveChatAction.prototype, "_messageRange", {
                 get: $util.oneOfGetter($oneOfFields = ["messageRange"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -4007,12 +4407,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ArchiveChatAction.decode = function decode(reader, length) {
+            ArchiveChatAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ArchiveChatAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.archived = reader.bool();
@@ -4186,7 +4588,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * BotWelcomeRequestAction _isSent.
+             * @member {"isSent"|undefined} _isSent
+             * @memberof SyncAction.SyncActionValue.BotWelcomeRequestAction
+             * @instance
+             */
             Object.defineProperty(BotWelcomeRequestAction.prototype, "_isSent", {
                 get: $util.oneOfGetter($oneOfFields = ["isSent"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -4245,12 +4652,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BotWelcomeRequestAction.decode = function decode(reader, length) {
+            BotWelcomeRequestAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.BotWelcomeRequestAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.isSent = reader.bool();
@@ -4402,7 +4811,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * CallLogAction _callLogRecord.
+             * @member {"callLogRecord"|undefined} _callLogRecord
+             * @memberof SyncAction.SyncActionValue.CallLogAction
+             * @instance
+             */
             Object.defineProperty(CallLogAction.prototype, "_callLogRecord", {
                 get: $util.oneOfGetter($oneOfFields = ["callLogRecord"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -4461,12 +4875,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CallLogAction.decode = function decode(reader, length) {
+            CallLogAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.CallLogAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.callLogRecord = $root.SyncAction.CallLogRecord.decode(reader, reader.uint32());
@@ -4624,7 +5040,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ChatAssignmentAction _deviceAgentID.
+             * @member {"deviceAgentID"|undefined} _deviceAgentID
+             * @memberof SyncAction.SyncActionValue.ChatAssignmentAction
+             * @instance
+             */
             Object.defineProperty(ChatAssignmentAction.prototype, "_deviceAgentID", {
                 get: $util.oneOfGetter($oneOfFields = ["deviceAgentID"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -4683,12 +5104,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ChatAssignmentAction.decode = function decode(reader, length) {
+            ChatAssignmentAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ChatAssignmentAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.deviceAgentID = reader.string();
@@ -4840,7 +5263,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ChatAssignmentOpenedStatusAction _chatOpened.
+             * @member {"chatOpened"|undefined} _chatOpened
+             * @memberof SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction
+             * @instance
+             */
             Object.defineProperty(ChatAssignmentOpenedStatusAction.prototype, "_chatOpened", {
                 get: $util.oneOfGetter($oneOfFields = ["chatOpened"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -4899,12 +5327,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ChatAssignmentOpenedStatusAction.decode = function decode(reader, length) {
+            ChatAssignmentOpenedStatusAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.chatOpened = reader.bool();
@@ -5056,7 +5486,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ClearChatAction _messageRange.
+             * @member {"messageRange"|undefined} _messageRange
+             * @memberof SyncAction.SyncActionValue.ClearChatAction
+             * @instance
+             */
             Object.defineProperty(ClearChatAction.prototype, "_messageRange", {
                 get: $util.oneOfGetter($oneOfFields = ["messageRange"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -5115,12 +5550,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ClearChatAction.decode = function decode(reader, length) {
+            ClearChatAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ClearChatAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.decode(reader, reader.uint32());
@@ -5323,37 +5760,67 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ContactAction _fullName.
+             * @member {"fullName"|undefined} _fullName
+             * @memberof SyncAction.SyncActionValue.ContactAction
+             * @instance
+             */
             Object.defineProperty(ContactAction.prototype, "_fullName", {
                 get: $util.oneOfGetter($oneOfFields = ["fullName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ContactAction _firstName.
+             * @member {"firstName"|undefined} _firstName
+             * @memberof SyncAction.SyncActionValue.ContactAction
+             * @instance
+             */
             Object.defineProperty(ContactAction.prototype, "_firstName", {
                 get: $util.oneOfGetter($oneOfFields = ["firstName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ContactAction _lidJid.
+             * @member {"lidJid"|undefined} _lidJid
+             * @memberof SyncAction.SyncActionValue.ContactAction
+             * @instance
+             */
             Object.defineProperty(ContactAction.prototype, "_lidJid", {
                 get: $util.oneOfGetter($oneOfFields = ["lidJid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ContactAction _saveOnPrimaryAddressbook.
+             * @member {"saveOnPrimaryAddressbook"|undefined} _saveOnPrimaryAddressbook
+             * @memberof SyncAction.SyncActionValue.ContactAction
+             * @instance
+             */
             Object.defineProperty(ContactAction.prototype, "_saveOnPrimaryAddressbook", {
                 get: $util.oneOfGetter($oneOfFields = ["saveOnPrimaryAddressbook"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ContactAction _pnJid.
+             * @member {"pnJid"|undefined} _pnJid
+             * @memberof SyncAction.SyncActionValue.ContactAction
+             * @instance
+             */
             Object.defineProperty(ContactAction.prototype, "_pnJid", {
                 get: $util.oneOfGetter($oneOfFields = ["pnJid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ContactAction _username.
+             * @member {"username"|undefined} _username
+             * @memberof SyncAction.SyncActionValue.ContactAction
+             * @instance
+             */
             Object.defineProperty(ContactAction.prototype, "_username", {
                 get: $util.oneOfGetter($oneOfFields = ["username"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -5422,12 +5889,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ContactAction.decode = function decode(reader, length) {
+            ContactAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ContactAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.fullName = reader.string();
@@ -5659,7 +6128,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * CtwaPerCustomerDataSharingAction _isCtwaPerCustomerDataSharingEnabled.
+             * @member {"isCtwaPerCustomerDataSharingEnabled"|undefined} _isCtwaPerCustomerDataSharingEnabled
+             * @memberof SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction
+             * @instance
+             */
             Object.defineProperty(CtwaPerCustomerDataSharingAction.prototype, "_isCtwaPerCustomerDataSharingEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isCtwaPerCustomerDataSharingEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -5718,12 +6192,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CtwaPerCustomerDataSharingAction.decode = function decode(reader, length) {
+            CtwaPerCustomerDataSharingAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.isCtwaPerCustomerDataSharingEnabled = reader.bool();
@@ -5846,9 +6322,9 @@ $root.SyncAction = (function() {
              * Properties of a CustomPaymentMethod.
              * @memberof SyncAction.SyncActionValue
              * @interface ICustomPaymentMethod
-             * @property {string} credentialId CustomPaymentMethod credentialId
-             * @property {string} country CustomPaymentMethod country
-             * @property {string} type CustomPaymentMethod type
+             * @property {string|null} [credentialId] CustomPaymentMethod credentialId
+             * @property {string|null} [country] CustomPaymentMethod country
+             * @property {string|null} [type] CustomPaymentMethod type
              * @property {Array.<SyncAction.SyncActionValue.ICustomPaymentMethodMetadata>|null} [metadata] CustomPaymentMethod metadata
              */
 
@@ -5870,27 +6346,27 @@ $root.SyncAction = (function() {
 
             /**
              * CustomPaymentMethod credentialId.
-             * @member {string} credentialId
+             * @member {string|null|undefined} credentialId
              * @memberof SyncAction.SyncActionValue.CustomPaymentMethod
              * @instance
              */
-            CustomPaymentMethod.prototype.credentialId = "";
+            CustomPaymentMethod.prototype.credentialId = null;
 
             /**
              * CustomPaymentMethod country.
-             * @member {string} country
+             * @member {string|null|undefined} country
              * @memberof SyncAction.SyncActionValue.CustomPaymentMethod
              * @instance
              */
-            CustomPaymentMethod.prototype.country = "";
+            CustomPaymentMethod.prototype.country = null;
 
             /**
              * CustomPaymentMethod type.
-             * @member {string} type
+             * @member {string|null|undefined} type
              * @memberof SyncAction.SyncActionValue.CustomPaymentMethod
              * @instance
              */
-            CustomPaymentMethod.prototype.type = "";
+            CustomPaymentMethod.prototype.type = null;
 
             /**
              * CustomPaymentMethod metadata.
@@ -5899,6 +6375,42 @@ $root.SyncAction = (function() {
              * @instance
              */
             CustomPaymentMethod.prototype.metadata = $util.emptyArray;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            /**
+             * CustomPaymentMethod _credentialId.
+             * @member {"credentialId"|undefined} _credentialId
+             * @memberof SyncAction.SyncActionValue.CustomPaymentMethod
+             * @instance
+             */
+            Object.defineProperty(CustomPaymentMethod.prototype, "_credentialId", {
+                get: $util.oneOfGetter($oneOfFields = ["credentialId"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * CustomPaymentMethod _country.
+             * @member {"country"|undefined} _country
+             * @memberof SyncAction.SyncActionValue.CustomPaymentMethod
+             * @instance
+             */
+            Object.defineProperty(CustomPaymentMethod.prototype, "_country", {
+                get: $util.oneOfGetter($oneOfFields = ["country"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * CustomPaymentMethod _type.
+             * @member {"type"|undefined} _type
+             * @memberof SyncAction.SyncActionValue.CustomPaymentMethod
+             * @instance
+             */
+            Object.defineProperty(CustomPaymentMethod.prototype, "_type", {
+                get: $util.oneOfGetter($oneOfFields = ["type"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
 
             /**
              * Creates a new CustomPaymentMethod instance using the specified properties.
@@ -5924,9 +6436,12 @@ $root.SyncAction = (function() {
             CustomPaymentMethod.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.credentialId);
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.country);
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.type);
+                if (message.credentialId != null && Object.hasOwnProperty.call(message, "credentialId"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.credentialId);
+                if (message.country != null && Object.hasOwnProperty.call(message, "country"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.country);
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.type);
                 if (message.metadata != null && message.metadata.length)
                     for (var i = 0; i < message.metadata.length; ++i)
                         $root.SyncAction.SyncActionValue.CustomPaymentMethodMetadata.encode(message.metadata[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
@@ -5957,12 +6472,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CustomPaymentMethod.decode = function decode(reader, length) {
+            CustomPaymentMethod.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.CustomPaymentMethod();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.credentialId = reader.string();
@@ -5987,12 +6504,6 @@ $root.SyncAction = (function() {
                         break;
                     }
                 }
-                if (!message.hasOwnProperty("credentialId"))
-                    throw $util.ProtocolError("missing required 'credentialId'", { instance: message });
-                if (!message.hasOwnProperty("country"))
-                    throw $util.ProtocolError("missing required 'country'", { instance: message });
-                if (!message.hasOwnProperty("type"))
-                    throw $util.ProtocolError("missing required 'type'", { instance: message });
                 return message;
             };
 
@@ -6023,12 +6534,22 @@ $root.SyncAction = (function() {
             CustomPaymentMethod.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (!$util.isString(message.credentialId))
-                    return "credentialId: string expected";
-                if (!$util.isString(message.country))
-                    return "country: string expected";
-                if (!$util.isString(message.type))
-                    return "type: string expected";
+                var properties = {};
+                if (message.credentialId != null && message.hasOwnProperty("credentialId")) {
+                    properties._credentialId = 1;
+                    if (!$util.isString(message.credentialId))
+                        return "credentialId: string expected";
+                }
+                if (message.country != null && message.hasOwnProperty("country")) {
+                    properties._country = 1;
+                    if (!$util.isString(message.country))
+                        return "country: string expected";
+                }
+                if (message.type != null && message.hasOwnProperty("type")) {
+                    properties._type = 1;
+                    if (!$util.isString(message.type))
+                        return "type: string expected";
+                }
                 if (message.metadata != null && message.hasOwnProperty("metadata")) {
                     if (!Array.isArray(message.metadata))
                         return "metadata: array expected";
@@ -6087,17 +6608,21 @@ $root.SyncAction = (function() {
                 var object = {};
                 if (options.arrays || options.defaults)
                     object.metadata = [];
-                if (options.defaults) {
-                    object.credentialId = "";
-                    object.country = "";
-                    object.type = "";
-                }
-                if (message.credentialId != null && message.hasOwnProperty("credentialId"))
+                if (message.credentialId != null && message.hasOwnProperty("credentialId")) {
                     object.credentialId = message.credentialId;
-                if (message.country != null && message.hasOwnProperty("country"))
+                    if (options.oneofs)
+                        object._credentialId = "credentialId";
+                }
+                if (message.country != null && message.hasOwnProperty("country")) {
                     object.country = message.country;
-                if (message.type != null && message.hasOwnProperty("type"))
+                    if (options.oneofs)
+                        object._country = "country";
+                }
+                if (message.type != null && message.hasOwnProperty("type")) {
                     object.type = message.type;
+                    if (options.oneofs)
+                        object._type = "type";
+                }
                 if (message.metadata && message.metadata.length) {
                     object.metadata = [];
                     for (var j = 0; j < message.metadata.length; ++j)
@@ -6141,8 +6666,8 @@ $root.SyncAction = (function() {
              * Properties of a CustomPaymentMethodMetadata.
              * @memberof SyncAction.SyncActionValue
              * @interface ICustomPaymentMethodMetadata
-             * @property {string} key CustomPaymentMethodMetadata key
-             * @property {string} value CustomPaymentMethodMetadata value
+             * @property {string|null} [key] CustomPaymentMethodMetadata key
+             * @property {string|null} [value] CustomPaymentMethodMetadata value
              */
 
             /**
@@ -6162,19 +6687,44 @@ $root.SyncAction = (function() {
 
             /**
              * CustomPaymentMethodMetadata key.
-             * @member {string} key
+             * @member {string|null|undefined} key
              * @memberof SyncAction.SyncActionValue.CustomPaymentMethodMetadata
              * @instance
              */
-            CustomPaymentMethodMetadata.prototype.key = "";
+            CustomPaymentMethodMetadata.prototype.key = null;
 
             /**
              * CustomPaymentMethodMetadata value.
-             * @member {string} value
+             * @member {string|null|undefined} value
              * @memberof SyncAction.SyncActionValue.CustomPaymentMethodMetadata
              * @instance
              */
-            CustomPaymentMethodMetadata.prototype.value = "";
+            CustomPaymentMethodMetadata.prototype.value = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            /**
+             * CustomPaymentMethodMetadata _key.
+             * @member {"key"|undefined} _key
+             * @memberof SyncAction.SyncActionValue.CustomPaymentMethodMetadata
+             * @instance
+             */
+            Object.defineProperty(CustomPaymentMethodMetadata.prototype, "_key", {
+                get: $util.oneOfGetter($oneOfFields = ["key"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * CustomPaymentMethodMetadata _value.
+             * @member {"value"|undefined} _value
+             * @memberof SyncAction.SyncActionValue.CustomPaymentMethodMetadata
+             * @instance
+             */
+            Object.defineProperty(CustomPaymentMethodMetadata.prototype, "_value", {
+                get: $util.oneOfGetter($oneOfFields = ["value"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
 
             /**
              * Creates a new CustomPaymentMethodMetadata instance using the specified properties.
@@ -6200,8 +6750,10 @@ $root.SyncAction = (function() {
             CustomPaymentMethodMetadata.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
+                if (message.key != null && Object.hasOwnProperty.call(message, "key"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
+                if (message.value != null && Object.hasOwnProperty.call(message, "value"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
                 return writer;
             };
 
@@ -6229,12 +6781,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CustomPaymentMethodMetadata.decode = function decode(reader, length) {
+            CustomPaymentMethodMetadata.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.CustomPaymentMethodMetadata();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.key = reader.string();
@@ -6249,10 +6803,6 @@ $root.SyncAction = (function() {
                         break;
                     }
                 }
-                if (!message.hasOwnProperty("key"))
-                    throw $util.ProtocolError("missing required 'key'", { instance: message });
-                if (!message.hasOwnProperty("value"))
-                    throw $util.ProtocolError("missing required 'value'", { instance: message });
                 return message;
             };
 
@@ -6283,10 +6833,17 @@ $root.SyncAction = (function() {
             CustomPaymentMethodMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (!$util.isString(message.key))
-                    return "key: string expected";
-                if (!$util.isString(message.value))
-                    return "value: string expected";
+                var properties = {};
+                if (message.key != null && message.hasOwnProperty("key")) {
+                    properties._key = 1;
+                    if (!$util.isString(message.key))
+                        return "key: string expected";
+                }
+                if (message.value != null && message.hasOwnProperty("value")) {
+                    properties._value = 1;
+                    if (!$util.isString(message.value))
+                        return "value: string expected";
+                }
                 return null;
             };
 
@@ -6322,14 +6879,16 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults) {
-                    object.key = "";
-                    object.value = "";
-                }
-                if (message.key != null && message.hasOwnProperty("key"))
+                if (message.key != null && message.hasOwnProperty("key")) {
                     object.key = message.key;
-                if (message.value != null && message.hasOwnProperty("value"))
+                    if (options.oneofs)
+                        object._key = "key";
+                }
+                if (message.value != null && message.hasOwnProperty("value")) {
                     object.value = message.value;
+                    if (options.oneofs)
+                        object._value = "value";
+                }
                 return object;
             };
 
@@ -6449,12 +7008,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CustomPaymentMethodsAction.decode = function decode(reader, length) {
+            CustomPaymentMethodsAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.CustomPaymentMethodsAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             if (!(message.customPaymentMethods && message.customPaymentMethods.length))
@@ -6621,7 +7182,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * DeleteChatAction _messageRange.
+             * @member {"messageRange"|undefined} _messageRange
+             * @memberof SyncAction.SyncActionValue.DeleteChatAction
+             * @instance
+             */
             Object.defineProperty(DeleteChatAction.prototype, "_messageRange", {
                 get: $util.oneOfGetter($oneOfFields = ["messageRange"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -6680,12 +7246,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DeleteChatAction.decode = function decode(reader, length) {
+            DeleteChatAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.DeleteChatAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.messageRange = $root.SyncAction.SyncActionValue.SyncActionMessageRange.decode(reader, reader.uint32());
@@ -6852,13 +7420,23 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * DeleteIndividualCallLogAction _peerJid.
+             * @member {"peerJid"|undefined} _peerJid
+             * @memberof SyncAction.SyncActionValue.DeleteIndividualCallLogAction
+             * @instance
+             */
             Object.defineProperty(DeleteIndividualCallLogAction.prototype, "_peerJid", {
                 get: $util.oneOfGetter($oneOfFields = ["peerJid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * DeleteIndividualCallLogAction _isIncoming.
+             * @member {"isIncoming"|undefined} _isIncoming
+             * @memberof SyncAction.SyncActionValue.DeleteIndividualCallLogAction
+             * @instance
+             */
             Object.defineProperty(DeleteIndividualCallLogAction.prototype, "_isIncoming", {
                 get: $util.oneOfGetter($oneOfFields = ["isIncoming"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -6919,12 +7497,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DeleteIndividualCallLogAction.decode = function decode(reader, length) {
+            DeleteIndividualCallLogAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.DeleteIndividualCallLogAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.peerJid = reader.string();
@@ -7101,13 +7681,23 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * DeleteMessageForMeAction _deleteMedia.
+             * @member {"deleteMedia"|undefined} _deleteMedia
+             * @memberof SyncAction.SyncActionValue.DeleteMessageForMeAction
+             * @instance
+             */
             Object.defineProperty(DeleteMessageForMeAction.prototype, "_deleteMedia", {
                 get: $util.oneOfGetter($oneOfFields = ["deleteMedia"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * DeleteMessageForMeAction _messageTimestamp.
+             * @member {"messageTimestamp"|undefined} _messageTimestamp
+             * @memberof SyncAction.SyncActionValue.DeleteMessageForMeAction
+             * @instance
+             */
             Object.defineProperty(DeleteMessageForMeAction.prototype, "_messageTimestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["messageTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -7168,12 +7758,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            DeleteMessageForMeAction.decode = function decode(reader, length) {
+            DeleteMessageForMeAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.DeleteMessageForMeAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.deleteMedia = reader.bool();
@@ -7351,7 +7943,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ExternalWebBetaAction _isOptIn.
+             * @member {"isOptIn"|undefined} _isOptIn
+             * @memberof SyncAction.SyncActionValue.ExternalWebBetaAction
+             * @instance
+             */
             Object.defineProperty(ExternalWebBetaAction.prototype, "_isOptIn", {
                 get: $util.oneOfGetter($oneOfFields = ["isOptIn"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -7410,12 +8007,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ExternalWebBetaAction.decode = function decode(reader, length) {
+            ExternalWebBetaAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ExternalWebBetaAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.isOptIn = reader.bool();
@@ -7619,12 +8218,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            FavoritesAction.decode = function decode(reader, length) {
+            FavoritesAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.FavoritesAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             if (!(message.favorites && message.favorites.length))
@@ -7788,7 +8389,12 @@ $root.SyncAction = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                // Virtual OneOf for proto3 optional field
+                /**
+                 * Favorite _id.
+                 * @member {"id"|undefined} _id
+                 * @memberof SyncAction.SyncActionValue.FavoritesAction.Favorite
+                 * @instance
+                 */
                 Object.defineProperty(Favorite.prototype, "_id", {
                     get: $util.oneOfGetter($oneOfFields = ["id"]),
                     set: $util.oneOfSetter($oneOfFields)
@@ -7847,12 +8453,14 @@ $root.SyncAction = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Favorite.decode = function decode(reader, length) {
+                Favorite.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.FavoritesAction.Favorite();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
+                        if (tag === error)
+                            break;
                         switch (tag >>> 3) {
                         case 1: {
                                 message.id = reader.string();
@@ -8007,7 +8615,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * KeyExpiration _expiredKeyEpoch.
+             * @member {"expiredKeyEpoch"|undefined} _expiredKeyEpoch
+             * @memberof SyncAction.SyncActionValue.KeyExpiration
+             * @instance
+             */
             Object.defineProperty(KeyExpiration.prototype, "_expiredKeyEpoch", {
                 get: $util.oneOfGetter($oneOfFields = ["expiredKeyEpoch"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -8066,12 +8679,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            KeyExpiration.decode = function decode(reader, length) {
+            KeyExpiration.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.KeyExpiration();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.expiredKeyEpoch = reader.int32();
@@ -8223,7 +8838,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LabelAssociationAction _labeled.
+             * @member {"labeled"|undefined} _labeled
+             * @memberof SyncAction.SyncActionValue.LabelAssociationAction
+             * @instance
+             */
             Object.defineProperty(LabelAssociationAction.prototype, "_labeled", {
                 get: $util.oneOfGetter($oneOfFields = ["labeled"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -8282,12 +8902,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LabelAssociationAction.decode = function decode(reader, length) {
+            LabelAssociationAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.LabelAssociationAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.labeled = reader.bool();
@@ -8502,49 +9124,89 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LabelEditAction _name.
+             * @member {"name"|undefined} _name
+             * @memberof SyncAction.SyncActionValue.LabelEditAction
+             * @instance
+             */
             Object.defineProperty(LabelEditAction.prototype, "_name", {
                 get: $util.oneOfGetter($oneOfFields = ["name"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LabelEditAction _color.
+             * @member {"color"|undefined} _color
+             * @memberof SyncAction.SyncActionValue.LabelEditAction
+             * @instance
+             */
             Object.defineProperty(LabelEditAction.prototype, "_color", {
                 get: $util.oneOfGetter($oneOfFields = ["color"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LabelEditAction _predefinedId.
+             * @member {"predefinedId"|undefined} _predefinedId
+             * @memberof SyncAction.SyncActionValue.LabelEditAction
+             * @instance
+             */
             Object.defineProperty(LabelEditAction.prototype, "_predefinedId", {
                 get: $util.oneOfGetter($oneOfFields = ["predefinedId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LabelEditAction _deleted.
+             * @member {"deleted"|undefined} _deleted
+             * @memberof SyncAction.SyncActionValue.LabelEditAction
+             * @instance
+             */
             Object.defineProperty(LabelEditAction.prototype, "_deleted", {
                 get: $util.oneOfGetter($oneOfFields = ["deleted"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LabelEditAction _orderIndex.
+             * @member {"orderIndex"|undefined} _orderIndex
+             * @memberof SyncAction.SyncActionValue.LabelEditAction
+             * @instance
+             */
             Object.defineProperty(LabelEditAction.prototype, "_orderIndex", {
                 get: $util.oneOfGetter($oneOfFields = ["orderIndex"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LabelEditAction _isActive.
+             * @member {"isActive"|undefined} _isActive
+             * @memberof SyncAction.SyncActionValue.LabelEditAction
+             * @instance
+             */
             Object.defineProperty(LabelEditAction.prototype, "_isActive", {
                 get: $util.oneOfGetter($oneOfFields = ["isActive"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LabelEditAction _type.
+             * @member {"type"|undefined} _type
+             * @memberof SyncAction.SyncActionValue.LabelEditAction
+             * @instance
+             */
             Object.defineProperty(LabelEditAction.prototype, "_type", {
                 get: $util.oneOfGetter($oneOfFields = ["type"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LabelEditAction _isImmutable.
+             * @member {"isImmutable"|undefined} _isImmutable
+             * @memberof SyncAction.SyncActionValue.LabelEditAction
+             * @instance
+             */
             Object.defineProperty(LabelEditAction.prototype, "_isImmutable", {
                 get: $util.oneOfGetter($oneOfFields = ["isImmutable"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -8617,12 +9279,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LabelEditAction.decode = function decode(reader, length) {
+            LabelEditAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.LabelEditAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.name = reader.string();
@@ -9016,12 +9680,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LabelReorderingAction.decode = function decode(reader, length) {
+            LabelReorderingAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.LabelReorderingAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             if (!(message.sortedLabelIds && message.sortedLabelIds.length))
@@ -9215,25 +9881,45 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LidContactAction _fullName.
+             * @member {"fullName"|undefined} _fullName
+             * @memberof SyncAction.SyncActionValue.LidContactAction
+             * @instance
+             */
             Object.defineProperty(LidContactAction.prototype, "_fullName", {
                 get: $util.oneOfGetter($oneOfFields = ["fullName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LidContactAction _firstName.
+             * @member {"firstName"|undefined} _firstName
+             * @memberof SyncAction.SyncActionValue.LidContactAction
+             * @instance
+             */
             Object.defineProperty(LidContactAction.prototype, "_firstName", {
                 get: $util.oneOfGetter($oneOfFields = ["firstName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LidContactAction _username.
+             * @member {"username"|undefined} _username
+             * @memberof SyncAction.SyncActionValue.LidContactAction
+             * @instance
+             */
             Object.defineProperty(LidContactAction.prototype, "_username", {
                 get: $util.oneOfGetter($oneOfFields = ["username"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LidContactAction _saveOnPrimaryAddressbook.
+             * @member {"saveOnPrimaryAddressbook"|undefined} _saveOnPrimaryAddressbook
+             * @memberof SyncAction.SyncActionValue.LidContactAction
+             * @instance
+             */
             Object.defineProperty(LidContactAction.prototype, "_saveOnPrimaryAddressbook", {
                 get: $util.oneOfGetter($oneOfFields = ["saveOnPrimaryAddressbook"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -9298,12 +9984,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LidContactAction.decode = function decode(reader, length) {
+            LidContactAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.LidContactAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.fullName = reader.string();
@@ -9503,7 +10191,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LocaleSetting _locale.
+             * @member {"locale"|undefined} _locale
+             * @memberof SyncAction.SyncActionValue.LocaleSetting
+             * @instance
+             */
             Object.defineProperty(LocaleSetting.prototype, "_locale", {
                 get: $util.oneOfGetter($oneOfFields = ["locale"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -9562,12 +10255,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LocaleSetting.decode = function decode(reader, length) {
+            LocaleSetting.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.LocaleSetting();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.locale = reader.string();
@@ -9719,7 +10414,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LockChatAction _locked.
+             * @member {"locked"|undefined} _locked
+             * @memberof SyncAction.SyncActionValue.LockChatAction
+             * @instance
+             */
             Object.defineProperty(LockChatAction.prototype, "_locked", {
                 get: $util.oneOfGetter($oneOfFields = ["locked"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -9778,12 +10478,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LockChatAction.decode = function decode(reader, length) {
+            LockChatAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.LockChatAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.locked = reader.bool();
@@ -9944,13 +10646,23 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MarkChatAsReadAction _read.
+             * @member {"read"|undefined} _read
+             * @memberof SyncAction.SyncActionValue.MarkChatAsReadAction
+             * @instance
+             */
             Object.defineProperty(MarkChatAsReadAction.prototype, "_read", {
                 get: $util.oneOfGetter($oneOfFields = ["read"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MarkChatAsReadAction _messageRange.
+             * @member {"messageRange"|undefined} _messageRange
+             * @memberof SyncAction.SyncActionValue.MarkChatAsReadAction
+             * @instance
+             */
             Object.defineProperty(MarkChatAsReadAction.prototype, "_messageRange", {
                 get: $util.oneOfGetter($oneOfFields = ["messageRange"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -10011,12 +10723,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MarkChatAsReadAction.decode = function decode(reader, length) {
+            MarkChatAsReadAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.MarkChatAsReadAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.read = reader.bool();
@@ -10244,43 +10958,78 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MarketingMessageAction _name.
+             * @member {"name"|undefined} _name
+             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
+             * @instance
+             */
             Object.defineProperty(MarketingMessageAction.prototype, "_name", {
                 get: $util.oneOfGetter($oneOfFields = ["name"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MarketingMessageAction _message.
+             * @member {"message"|undefined} _message
+             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
+             * @instance
+             */
             Object.defineProperty(MarketingMessageAction.prototype, "_message", {
                 get: $util.oneOfGetter($oneOfFields = ["message"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MarketingMessageAction _type.
+             * @member {"type"|undefined} _type
+             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
+             * @instance
+             */
             Object.defineProperty(MarketingMessageAction.prototype, "_type", {
                 get: $util.oneOfGetter($oneOfFields = ["type"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MarketingMessageAction _createdAt.
+             * @member {"createdAt"|undefined} _createdAt
+             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
+             * @instance
+             */
             Object.defineProperty(MarketingMessageAction.prototype, "_createdAt", {
                 get: $util.oneOfGetter($oneOfFields = ["createdAt"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MarketingMessageAction _lastSentAt.
+             * @member {"lastSentAt"|undefined} _lastSentAt
+             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
+             * @instance
+             */
             Object.defineProperty(MarketingMessageAction.prototype, "_lastSentAt", {
                 get: $util.oneOfGetter($oneOfFields = ["lastSentAt"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MarketingMessageAction _isDeleted.
+             * @member {"isDeleted"|undefined} _isDeleted
+             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
+             * @instance
+             */
             Object.defineProperty(MarketingMessageAction.prototype, "_isDeleted", {
                 get: $util.oneOfGetter($oneOfFields = ["isDeleted"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MarketingMessageAction _mediaId.
+             * @member {"mediaId"|undefined} _mediaId
+             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
+             * @instance
+             */
             Object.defineProperty(MarketingMessageAction.prototype, "_mediaId", {
                 get: $util.oneOfGetter($oneOfFields = ["mediaId"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -10351,12 +11100,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MarketingMessageAction.decode = function decode(reader, length) {
+            MarketingMessageAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.MarketingMessageAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.name = reader.string();
@@ -10650,7 +11401,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MarketingMessageBroadcastAction _repliedCount.
+             * @member {"repliedCount"|undefined} _repliedCount
+             * @memberof SyncAction.SyncActionValue.MarketingMessageBroadcastAction
+             * @instance
+             */
             Object.defineProperty(MarketingMessageBroadcastAction.prototype, "_repliedCount", {
                 get: $util.oneOfGetter($oneOfFields = ["repliedCount"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -10709,12 +11465,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MarketingMessageBroadcastAction.decode = function decode(reader, length) {
+            MarketingMessageBroadcastAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.MarketingMessageBroadcastAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.repliedCount = reader.int32();
@@ -10837,8 +11595,8 @@ $root.SyncAction = (function() {
              * Properties of a MerchantPaymentPartnerAction.
              * @memberof SyncAction.SyncActionValue
              * @interface IMerchantPaymentPartnerAction
-             * @property {SyncAction.SyncActionValue.MerchantPaymentPartnerAction.Status} status MerchantPaymentPartnerAction status
-             * @property {string} country MerchantPaymentPartnerAction country
+             * @property {SyncAction.SyncActionValue.MerchantPaymentPartnerAction.Status|null} [status] MerchantPaymentPartnerAction status
+             * @property {string|null} [country] MerchantPaymentPartnerAction country
              * @property {string|null} [gatewayName] MerchantPaymentPartnerAction gatewayName
              * @property {string|null} [credentialId] MerchantPaymentPartnerAction credentialId
              */
@@ -10860,19 +11618,19 @@ $root.SyncAction = (function() {
 
             /**
              * MerchantPaymentPartnerAction status.
-             * @member {SyncAction.SyncActionValue.MerchantPaymentPartnerAction.Status} status
+             * @member {SyncAction.SyncActionValue.MerchantPaymentPartnerAction.Status|null|undefined} status
              * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
              * @instance
              */
-            MerchantPaymentPartnerAction.prototype.status = 0;
+            MerchantPaymentPartnerAction.prototype.status = null;
 
             /**
              * MerchantPaymentPartnerAction country.
-             * @member {string} country
+             * @member {string|null|undefined} country
              * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
              * @instance
              */
-            MerchantPaymentPartnerAction.prototype.country = "";
+            MerchantPaymentPartnerAction.prototype.country = null;
 
             /**
              * MerchantPaymentPartnerAction gatewayName.
@@ -10893,13 +11651,45 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MerchantPaymentPartnerAction _status.
+             * @member {"status"|undefined} _status
+             * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
+             * @instance
+             */
+            Object.defineProperty(MerchantPaymentPartnerAction.prototype, "_status", {
+                get: $util.oneOfGetter($oneOfFields = ["status"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * MerchantPaymentPartnerAction _country.
+             * @member {"country"|undefined} _country
+             * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
+             * @instance
+             */
+            Object.defineProperty(MerchantPaymentPartnerAction.prototype, "_country", {
+                get: $util.oneOfGetter($oneOfFields = ["country"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * MerchantPaymentPartnerAction _gatewayName.
+             * @member {"gatewayName"|undefined} _gatewayName
+             * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
+             * @instance
+             */
             Object.defineProperty(MerchantPaymentPartnerAction.prototype, "_gatewayName", {
                 get: $util.oneOfGetter($oneOfFields = ["gatewayName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MerchantPaymentPartnerAction _credentialId.
+             * @member {"credentialId"|undefined} _credentialId
+             * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
+             * @instance
+             */
             Object.defineProperty(MerchantPaymentPartnerAction.prototype, "_credentialId", {
                 get: $util.oneOfGetter($oneOfFields = ["credentialId"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -10929,8 +11719,10 @@ $root.SyncAction = (function() {
             MerchantPaymentPartnerAction.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.status);
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.country);
+                if (message.status != null && Object.hasOwnProperty.call(message, "status"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.status);
+                if (message.country != null && Object.hasOwnProperty.call(message, "country"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.country);
                 if (message.gatewayName != null && Object.hasOwnProperty.call(message, "gatewayName"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.gatewayName);
                 if (message.credentialId != null && Object.hasOwnProperty.call(message, "credentialId"))
@@ -10962,12 +11754,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MerchantPaymentPartnerAction.decode = function decode(reader, length) {
+            MerchantPaymentPartnerAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.status = reader.int32();
@@ -10990,10 +11784,6 @@ $root.SyncAction = (function() {
                         break;
                     }
                 }
-                if (!message.hasOwnProperty("status"))
-                    throw $util.ProtocolError("missing required 'status'", { instance: message });
-                if (!message.hasOwnProperty("country"))
-                    throw $util.ProtocolError("missing required 'country'", { instance: message });
                 return message;
             };
 
@@ -11025,15 +11815,21 @@ $root.SyncAction = (function() {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 var properties = {};
-                switch (message.status) {
-                default:
-                    return "status: enum value expected";
-                case 0:
-                case 1:
-                    break;
+                if (message.status != null && message.hasOwnProperty("status")) {
+                    properties._status = 1;
+                    switch (message.status) {
+                    default:
+                        return "status: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
                 }
-                if (!$util.isString(message.country))
-                    return "country: string expected";
+                if (message.country != null && message.hasOwnProperty("country")) {
+                    properties._country = 1;
+                    if (!$util.isString(message.country))
+                        return "country: string expected";
+                }
                 if (message.gatewayName != null && message.hasOwnProperty("gatewayName")) {
                     properties._gatewayName = 1;
                     if (!$util.isString(message.gatewayName))
@@ -11097,14 +11893,16 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults) {
-                    object.status = options.enums === String ? "ACTIVE" : 0;
-                    object.country = "";
-                }
-                if (message.status != null && message.hasOwnProperty("status"))
+                if (message.status != null && message.hasOwnProperty("status")) {
                     object.status = options.enums === String ? $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction.Status[message.status] === undefined ? message.status : $root.SyncAction.SyncActionValue.MerchantPaymentPartnerAction.Status[message.status] : message.status;
-                if (message.country != null && message.hasOwnProperty("country"))
+                    if (options.oneofs)
+                        object._status = "status";
+                }
+                if (message.country != null && message.hasOwnProperty("country")) {
                     object.country = message.country;
+                    if (options.oneofs)
+                        object._country = "country";
+                }
                 if (message.gatewayName != null && message.hasOwnProperty("gatewayName")) {
                     object.gatewayName = message.gatewayName;
                     if (options.oneofs)
@@ -11214,19 +12012,34 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MuteAction _muted.
+             * @member {"muted"|undefined} _muted
+             * @memberof SyncAction.SyncActionValue.MuteAction
+             * @instance
+             */
             Object.defineProperty(MuteAction.prototype, "_muted", {
                 get: $util.oneOfGetter($oneOfFields = ["muted"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MuteAction _muteEndTimestamp.
+             * @member {"muteEndTimestamp"|undefined} _muteEndTimestamp
+             * @memberof SyncAction.SyncActionValue.MuteAction
+             * @instance
+             */
             Object.defineProperty(MuteAction.prototype, "_muteEndTimestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["muteEndTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * MuteAction _autoMuted.
+             * @member {"autoMuted"|undefined} _autoMuted
+             * @memberof SyncAction.SyncActionValue.MuteAction
+             * @instance
+             */
             Object.defineProperty(MuteAction.prototype, "_autoMuted", {
                 get: $util.oneOfGetter($oneOfFields = ["autoMuted"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -11289,12 +12102,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MuteAction.decode = function decode(reader, length) {
+            MuteAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.MuteAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.muted = reader.bool();
@@ -11524,31 +12339,56 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * NoteEditAction _type.
+             * @member {"type"|undefined} _type
+             * @memberof SyncAction.SyncActionValue.NoteEditAction
+             * @instance
+             */
             Object.defineProperty(NoteEditAction.prototype, "_type", {
                 get: $util.oneOfGetter($oneOfFields = ["type"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * NoteEditAction _chatJid.
+             * @member {"chatJid"|undefined} _chatJid
+             * @memberof SyncAction.SyncActionValue.NoteEditAction
+             * @instance
+             */
             Object.defineProperty(NoteEditAction.prototype, "_chatJid", {
                 get: $util.oneOfGetter($oneOfFields = ["chatJid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * NoteEditAction _createdAt.
+             * @member {"createdAt"|undefined} _createdAt
+             * @memberof SyncAction.SyncActionValue.NoteEditAction
+             * @instance
+             */
             Object.defineProperty(NoteEditAction.prototype, "_createdAt", {
                 get: $util.oneOfGetter($oneOfFields = ["createdAt"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * NoteEditAction _deleted.
+             * @member {"deleted"|undefined} _deleted
+             * @memberof SyncAction.SyncActionValue.NoteEditAction
+             * @instance
+             */
             Object.defineProperty(NoteEditAction.prototype, "_deleted", {
                 get: $util.oneOfGetter($oneOfFields = ["deleted"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * NoteEditAction _unstructuredContent.
+             * @member {"unstructuredContent"|undefined} _unstructuredContent
+             * @memberof SyncAction.SyncActionValue.NoteEditAction
+             * @instance
+             */
             Object.defineProperty(NoteEditAction.prototype, "_unstructuredContent", {
                 get: $util.oneOfGetter($oneOfFields = ["unstructuredContent"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -11615,12 +12455,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            NoteEditAction.decode = function decode(reader, length) {
+            NoteEditAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.NoteEditAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.type = reader.int32();
@@ -11879,7 +12721,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * NotificationActivitySettingAction _notificationActivitySetting.
+             * @member {"notificationActivitySetting"|undefined} _notificationActivitySetting
+             * @memberof SyncAction.SyncActionValue.NotificationActivitySettingAction
+             * @instance
+             */
             Object.defineProperty(NotificationActivitySettingAction.prototype, "_notificationActivitySetting", {
                 get: $util.oneOfGetter($oneOfFields = ["notificationActivitySetting"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -11938,12 +12785,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            NotificationActivitySettingAction.decode = function decode(reader, length) {
+            NotificationActivitySettingAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.NotificationActivitySettingAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.notificationActivitySetting = reader.int32();
@@ -12142,7 +12991,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * NuxAction _acknowledged.
+             * @member {"acknowledged"|undefined} _acknowledged
+             * @memberof SyncAction.SyncActionValue.NuxAction
+             * @instance
+             */
             Object.defineProperty(NuxAction.prototype, "_acknowledged", {
                 get: $util.oneOfGetter($oneOfFields = ["acknowledged"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -12201,12 +13055,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            NuxAction.decode = function decode(reader, length) {
+            NuxAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.NuxAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.acknowledged = reader.bool();
@@ -12358,7 +13214,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * PaymentInfoAction _cpi.
+             * @member {"cpi"|undefined} _cpi
+             * @memberof SyncAction.SyncActionValue.PaymentInfoAction
+             * @instance
+             */
             Object.defineProperty(PaymentInfoAction.prototype, "_cpi", {
                 get: $util.oneOfGetter($oneOfFields = ["cpi"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -12417,12 +13278,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PaymentInfoAction.decode = function decode(reader, length) {
+            PaymentInfoAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PaymentInfoAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.cpi = reader.string();
@@ -12545,8 +13408,8 @@ $root.SyncAction = (function() {
              * Properties of a PaymentTosAction.
              * @memberof SyncAction.SyncActionValue
              * @interface IPaymentTosAction
-             * @property {SyncAction.SyncActionValue.PaymentTosAction.PaymentNotice} paymentNotice PaymentTosAction paymentNotice
-             * @property {boolean} accepted PaymentTosAction accepted
+             * @property {SyncAction.SyncActionValue.PaymentTosAction.PaymentNotice|null} [paymentNotice] PaymentTosAction paymentNotice
+             * @property {boolean|null} [accepted] PaymentTosAction accepted
              */
 
             /**
@@ -12566,19 +13429,44 @@ $root.SyncAction = (function() {
 
             /**
              * PaymentTosAction paymentNotice.
-             * @member {SyncAction.SyncActionValue.PaymentTosAction.PaymentNotice} paymentNotice
+             * @member {SyncAction.SyncActionValue.PaymentTosAction.PaymentNotice|null|undefined} paymentNotice
              * @memberof SyncAction.SyncActionValue.PaymentTosAction
              * @instance
              */
-            PaymentTosAction.prototype.paymentNotice = 0;
+            PaymentTosAction.prototype.paymentNotice = null;
 
             /**
              * PaymentTosAction accepted.
-             * @member {boolean} accepted
+             * @member {boolean|null|undefined} accepted
              * @memberof SyncAction.SyncActionValue.PaymentTosAction
              * @instance
              */
-            PaymentTosAction.prototype.accepted = false;
+            PaymentTosAction.prototype.accepted = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            /**
+             * PaymentTosAction _paymentNotice.
+             * @member {"paymentNotice"|undefined} _paymentNotice
+             * @memberof SyncAction.SyncActionValue.PaymentTosAction
+             * @instance
+             */
+            Object.defineProperty(PaymentTosAction.prototype, "_paymentNotice", {
+                get: $util.oneOfGetter($oneOfFields = ["paymentNotice"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * PaymentTosAction _accepted.
+             * @member {"accepted"|undefined} _accepted
+             * @memberof SyncAction.SyncActionValue.PaymentTosAction
+             * @instance
+             */
+            Object.defineProperty(PaymentTosAction.prototype, "_accepted", {
+                get: $util.oneOfGetter($oneOfFields = ["accepted"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
 
             /**
              * Creates a new PaymentTosAction instance using the specified properties.
@@ -12604,8 +13492,10 @@ $root.SyncAction = (function() {
             PaymentTosAction.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.paymentNotice);
-                writer.uint32(/* id 2, wireType 0 =*/16).bool(message.accepted);
+                if (message.paymentNotice != null && Object.hasOwnProperty.call(message, "paymentNotice"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.paymentNotice);
+                if (message.accepted != null && Object.hasOwnProperty.call(message, "accepted"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).bool(message.accepted);
                 return writer;
             };
 
@@ -12633,12 +13523,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PaymentTosAction.decode = function decode(reader, length) {
+            PaymentTosAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PaymentTosAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.paymentNotice = reader.int32();
@@ -12653,10 +13545,6 @@ $root.SyncAction = (function() {
                         break;
                     }
                 }
-                if (!message.hasOwnProperty("paymentNotice"))
-                    throw $util.ProtocolError("missing required 'paymentNotice'", { instance: message });
-                if (!message.hasOwnProperty("accepted"))
-                    throw $util.ProtocolError("missing required 'accepted'", { instance: message });
                 return message;
             };
 
@@ -12687,14 +13575,21 @@ $root.SyncAction = (function() {
             PaymentTosAction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                switch (message.paymentNotice) {
-                default:
-                    return "paymentNotice: enum value expected";
-                case 0:
-                    break;
+                var properties = {};
+                if (message.paymentNotice != null && message.hasOwnProperty("paymentNotice")) {
+                    properties._paymentNotice = 1;
+                    switch (message.paymentNotice) {
+                    default:
+                        return "paymentNotice: enum value expected";
+                    case 0:
+                        break;
+                    }
                 }
-                if (typeof message.accepted !== "boolean")
-                    return "accepted: boolean expected";
+                if (message.accepted != null && message.hasOwnProperty("accepted")) {
+                    properties._accepted = 1;
+                    if (typeof message.accepted !== "boolean")
+                        return "accepted: boolean expected";
+                }
                 return null;
             };
 
@@ -12740,14 +13635,16 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults) {
-                    object.paymentNotice = options.enums === String ? "BR_PAY_PRIVACY_POLICY" : 0;
-                    object.accepted = false;
-                }
-                if (message.paymentNotice != null && message.hasOwnProperty("paymentNotice"))
+                if (message.paymentNotice != null && message.hasOwnProperty("paymentNotice")) {
                     object.paymentNotice = options.enums === String ? $root.SyncAction.SyncActionValue.PaymentTosAction.PaymentNotice[message.paymentNotice] === undefined ? message.paymentNotice : $root.SyncAction.SyncActionValue.PaymentTosAction.PaymentNotice[message.paymentNotice] : message.paymentNotice;
-                if (message.accepted != null && message.hasOwnProperty("accepted"))
+                    if (options.oneofs)
+                        object._paymentNotice = "paymentNotice";
+                }
+                if (message.accepted != null && message.hasOwnProperty("accepted")) {
                     object.accepted = message.accepted;
+                    if (options.oneofs)
+                        object._accepted = "accepted";
+                }
                 return object;
             };
 
@@ -12827,7 +13724,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * PinAction _pinned.
+             * @member {"pinned"|undefined} _pinned
+             * @memberof SyncAction.SyncActionValue.PinAction
+             * @instance
+             */
             Object.defineProperty(PinAction.prototype, "_pinned", {
                 get: $util.oneOfGetter($oneOfFields = ["pinned"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -12886,12 +13788,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PinAction.decode = function decode(reader, length) {
+            PinAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PinAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.pinned = reader.bool();
@@ -13043,7 +13947,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * PnForLidChatAction _pnJid.
+             * @member {"pnJid"|undefined} _pnJid
+             * @memberof SyncAction.SyncActionValue.PnForLidChatAction
+             * @instance
+             */
             Object.defineProperty(PnForLidChatAction.prototype, "_pnJid", {
                 get: $util.oneOfGetter($oneOfFields = ["pnJid"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -13102,12 +14011,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PnForLidChatAction.decode = function decode(reader, length) {
+            PnForLidChatAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PnForLidChatAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.pnJid = reader.string();
@@ -13311,12 +14222,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PrimaryFeature.decode = function decode(reader, length) {
+            PrimaryFeature.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PrimaryFeature();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             if (!(message.flags && message.flags.length))
@@ -13478,7 +14391,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * PrimaryVersionAction _version.
+             * @member {"version"|undefined} _version
+             * @memberof SyncAction.SyncActionValue.PrimaryVersionAction
+             * @instance
+             */
             Object.defineProperty(PrimaryVersionAction.prototype, "_version", {
                 get: $util.oneOfGetter($oneOfFields = ["version"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -13537,12 +14455,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PrimaryVersionAction.decode = function decode(reader, length) {
+            PrimaryVersionAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PrimaryVersionAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.version = reader.string();
@@ -13694,7 +14614,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * PrivacySettingDisableLinkPreviewsAction _isPreviewsDisabled.
+             * @member {"isPreviewsDisabled"|undefined} _isPreviewsDisabled
+             * @memberof SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction
+             * @instance
+             */
             Object.defineProperty(PrivacySettingDisableLinkPreviewsAction.prototype, "_isPreviewsDisabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isPreviewsDisabled"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -13753,12 +14678,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PrivacySettingDisableLinkPreviewsAction.decode = function decode(reader, length) {
+            PrivacySettingDisableLinkPreviewsAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.isPreviewsDisabled = reader.bool();
@@ -13910,7 +14837,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * PrivacySettingRelayAllCalls _isEnabled.
+             * @member {"isEnabled"|undefined} _isEnabled
+             * @memberof SyncAction.SyncActionValue.PrivacySettingRelayAllCalls
+             * @instance
+             */
             Object.defineProperty(PrivacySettingRelayAllCalls.prototype, "_isEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -13969,12 +14901,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PrivacySettingRelayAllCalls.decode = function decode(reader, length) {
+            PrivacySettingRelayAllCalls.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PrivacySettingRelayAllCalls();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.isEnabled = reader.bool();
@@ -14126,7 +15060,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * PushNameSetting _name.
+             * @member {"name"|undefined} _name
+             * @memberof SyncAction.SyncActionValue.PushNameSetting
+             * @instance
+             */
             Object.defineProperty(PushNameSetting.prototype, "_name", {
                 get: $util.oneOfGetter($oneOfFields = ["name"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -14185,12 +15124,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            PushNameSetting.decode = function decode(reader, length) {
+            PushNameSetting.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.PushNameSetting();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.name = reader.string();
@@ -14379,25 +15320,45 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * QuickReplyAction _shortcut.
+             * @member {"shortcut"|undefined} _shortcut
+             * @memberof SyncAction.SyncActionValue.QuickReplyAction
+             * @instance
+             */
             Object.defineProperty(QuickReplyAction.prototype, "_shortcut", {
                 get: $util.oneOfGetter($oneOfFields = ["shortcut"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * QuickReplyAction _message.
+             * @member {"message"|undefined} _message
+             * @memberof SyncAction.SyncActionValue.QuickReplyAction
+             * @instance
+             */
             Object.defineProperty(QuickReplyAction.prototype, "_message", {
                 get: $util.oneOfGetter($oneOfFields = ["message"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * QuickReplyAction _count.
+             * @member {"count"|undefined} _count
+             * @memberof SyncAction.SyncActionValue.QuickReplyAction
+             * @instance
+             */
             Object.defineProperty(QuickReplyAction.prototype, "_count", {
                 get: $util.oneOfGetter($oneOfFields = ["count"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * QuickReplyAction _deleted.
+             * @member {"deleted"|undefined} _deleted
+             * @memberof SyncAction.SyncActionValue.QuickReplyAction
+             * @instance
+             */
             Object.defineProperty(QuickReplyAction.prototype, "_deleted", {
                 get: $util.oneOfGetter($oneOfFields = ["deleted"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -14465,12 +15426,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            QuickReplyAction.decode = function decode(reader, length) {
+            QuickReplyAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.QuickReplyAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.shortcut = reader.string();
@@ -14749,12 +15712,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            RecentEmojiWeightsAction.decode = function decode(reader, length) {
+            RecentEmojiWeightsAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.RecentEmojiWeightsAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             if (!(message.weights && message.weights.length))
@@ -14921,7 +15886,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * RemoveRecentStickerAction _lastStickerSentTs.
+             * @member {"lastStickerSentTs"|undefined} _lastStickerSentTs
+             * @memberof SyncAction.SyncActionValue.RemoveRecentStickerAction
+             * @instance
+             */
             Object.defineProperty(RemoveRecentStickerAction.prototype, "_lastStickerSentTs", {
                 get: $util.oneOfGetter($oneOfFields = ["lastStickerSentTs"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -14980,12 +15950,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            RemoveRecentStickerAction.decode = function decode(reader, length) {
+            RemoveRecentStickerAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.RemoveRecentStickerAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.lastStickerSentTs = reader.int64();
@@ -15147,7 +16119,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * SecurityNotificationSetting _showNotification.
+             * @member {"showNotification"|undefined} _showNotification
+             * @memberof SyncAction.SyncActionValue.SecurityNotificationSetting
+             * @instance
+             */
             Object.defineProperty(SecurityNotificationSetting.prototype, "_showNotification", {
                 get: $util.oneOfGetter($oneOfFields = ["showNotification"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -15206,12 +16183,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SecurityNotificationSetting.decode = function decode(reader, length) {
+            SecurityNotificationSetting.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.SecurityNotificationSetting();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.showNotification = reader.bool();
@@ -15363,7 +16342,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StarAction _starred.
+             * @member {"starred"|undefined} _starred
+             * @memberof SyncAction.SyncActionValue.StarAction
+             * @instance
+             */
             Object.defineProperty(StarAction.prototype, "_starred", {
                 get: $util.oneOfGetter($oneOfFields = ["starred"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -15422,12 +16406,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            StarAction.decode = function decode(reader, length) {
+            StarAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.StarAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.starred = reader.bool();
@@ -15589,7 +16575,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StatusPrivacyAction _mode.
+             * @member {"mode"|undefined} _mode
+             * @memberof SyncAction.SyncActionValue.StatusPrivacyAction
+             * @instance
+             */
             Object.defineProperty(StatusPrivacyAction.prototype, "_mode", {
                 get: $util.oneOfGetter($oneOfFields = ["mode"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -15651,12 +16642,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            StatusPrivacyAction.decode = function decode(reader, length) {
+            StatusPrivacyAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.StatusPrivacyAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.mode = reader.int32();
@@ -15965,67 +16958,122 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StickerAction _url.
+             * @member {"url"|undefined} _url
+             * @memberof SyncAction.SyncActionValue.StickerAction
+             * @instance
+             */
             Object.defineProperty(StickerAction.prototype, "_url", {
                 get: $util.oneOfGetter($oneOfFields = ["url"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StickerAction _fileEncSha256.
+             * @member {"fileEncSha256"|undefined} _fileEncSha256
+             * @memberof SyncAction.SyncActionValue.StickerAction
+             * @instance
+             */
             Object.defineProperty(StickerAction.prototype, "_fileEncSha256", {
                 get: $util.oneOfGetter($oneOfFields = ["fileEncSha256"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StickerAction _mediaKey.
+             * @member {"mediaKey"|undefined} _mediaKey
+             * @memberof SyncAction.SyncActionValue.StickerAction
+             * @instance
+             */
             Object.defineProperty(StickerAction.prototype, "_mediaKey", {
                 get: $util.oneOfGetter($oneOfFields = ["mediaKey"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StickerAction _mimetype.
+             * @member {"mimetype"|undefined} _mimetype
+             * @memberof SyncAction.SyncActionValue.StickerAction
+             * @instance
+             */
             Object.defineProperty(StickerAction.prototype, "_mimetype", {
                 get: $util.oneOfGetter($oneOfFields = ["mimetype"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StickerAction _height.
+             * @member {"height"|undefined} _height
+             * @memberof SyncAction.SyncActionValue.StickerAction
+             * @instance
+             */
             Object.defineProperty(StickerAction.prototype, "_height", {
                 get: $util.oneOfGetter($oneOfFields = ["height"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StickerAction _width.
+             * @member {"width"|undefined} _width
+             * @memberof SyncAction.SyncActionValue.StickerAction
+             * @instance
+             */
             Object.defineProperty(StickerAction.prototype, "_width", {
                 get: $util.oneOfGetter($oneOfFields = ["width"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StickerAction _directPath.
+             * @member {"directPath"|undefined} _directPath
+             * @memberof SyncAction.SyncActionValue.StickerAction
+             * @instance
+             */
             Object.defineProperty(StickerAction.prototype, "_directPath", {
                 get: $util.oneOfGetter($oneOfFields = ["directPath"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StickerAction _fileLength.
+             * @member {"fileLength"|undefined} _fileLength
+             * @memberof SyncAction.SyncActionValue.StickerAction
+             * @instance
+             */
             Object.defineProperty(StickerAction.prototype, "_fileLength", {
                 get: $util.oneOfGetter($oneOfFields = ["fileLength"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StickerAction _isFavorite.
+             * @member {"isFavorite"|undefined} _isFavorite
+             * @memberof SyncAction.SyncActionValue.StickerAction
+             * @instance
+             */
             Object.defineProperty(StickerAction.prototype, "_isFavorite", {
                 get: $util.oneOfGetter($oneOfFields = ["isFavorite"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StickerAction _deviceIdHint.
+             * @member {"deviceIdHint"|undefined} _deviceIdHint
+             * @memberof SyncAction.SyncActionValue.StickerAction
+             * @instance
+             */
             Object.defineProperty(StickerAction.prototype, "_deviceIdHint", {
                 get: $util.oneOfGetter($oneOfFields = ["deviceIdHint"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * StickerAction _isLottie.
+             * @member {"isLottie"|undefined} _isLottie
+             * @memberof SyncAction.SyncActionValue.StickerAction
+             * @instance
+             */
             Object.defineProperty(StickerAction.prototype, "_isLottie", {
                 get: $util.oneOfGetter($oneOfFields = ["isLottie"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -16104,12 +17152,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            StickerAction.decode = function decode(reader, length) {
+            StickerAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.StickerAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.url = reader.string();
@@ -16455,19 +17505,34 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * SubscriptionAction _isDeactivated.
+             * @member {"isDeactivated"|undefined} _isDeactivated
+             * @memberof SyncAction.SyncActionValue.SubscriptionAction
+             * @instance
+             */
             Object.defineProperty(SubscriptionAction.prototype, "_isDeactivated", {
                 get: $util.oneOfGetter($oneOfFields = ["isDeactivated"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * SubscriptionAction _isAutoRenewing.
+             * @member {"isAutoRenewing"|undefined} _isAutoRenewing
+             * @memberof SyncAction.SyncActionValue.SubscriptionAction
+             * @instance
+             */
             Object.defineProperty(SubscriptionAction.prototype, "_isAutoRenewing", {
                 get: $util.oneOfGetter($oneOfFields = ["isAutoRenewing"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * SubscriptionAction _expirationDate.
+             * @member {"expirationDate"|undefined} _expirationDate
+             * @memberof SyncAction.SyncActionValue.SubscriptionAction
+             * @instance
+             */
             Object.defineProperty(SubscriptionAction.prototype, "_expirationDate", {
                 get: $util.oneOfGetter($oneOfFields = ["expirationDate"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -16530,12 +17595,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SubscriptionAction.decode = function decode(reader, length) {
+            SubscriptionAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.SubscriptionAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.isDeactivated = reader.bool();
@@ -16738,13 +17805,23 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * SyncActionMessage _key.
+             * @member {"key"|undefined} _key
+             * @memberof SyncAction.SyncActionValue.SyncActionMessage
+             * @instance
+             */
             Object.defineProperty(SyncActionMessage.prototype, "_key", {
                 get: $util.oneOfGetter($oneOfFields = ["key"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * SyncActionMessage _timestamp.
+             * @member {"timestamp"|undefined} _timestamp
+             * @memberof SyncAction.SyncActionValue.SyncActionMessage
+             * @instance
+             */
             Object.defineProperty(SyncActionMessage.prototype, "_timestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["timestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -16805,12 +17882,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SyncActionMessage.decode = function decode(reader, length) {
+            SyncActionMessage.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.SyncActionMessage();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.key = $root.Protocol.MessageKey.decode(reader, reader.uint32());
@@ -17013,13 +18092,23 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * SyncActionMessageRange _lastMessageTimestamp.
+             * @member {"lastMessageTimestamp"|undefined} _lastMessageTimestamp
+             * @memberof SyncAction.SyncActionValue.SyncActionMessageRange
+             * @instance
+             */
             Object.defineProperty(SyncActionMessageRange.prototype, "_lastMessageTimestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["lastMessageTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * SyncActionMessageRange _lastSystemMessageTimestamp.
+             * @member {"lastSystemMessageTimestamp"|undefined} _lastSystemMessageTimestamp
+             * @memberof SyncAction.SyncActionValue.SyncActionMessageRange
+             * @instance
+             */
             Object.defineProperty(SyncActionMessageRange.prototype, "_lastSystemMessageTimestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["lastSystemMessageTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -17083,12 +18172,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            SyncActionMessageRange.decode = function decode(reader, length) {
+            SyncActionMessageRange.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.SyncActionMessageRange();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.lastMessageTimestamp = reader.int64();
@@ -17308,7 +18399,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * TimeFormatAction _isTwentyFourHourFormatEnabled.
+             * @member {"isTwentyFourHourFormatEnabled"|undefined} _isTwentyFourHourFormatEnabled
+             * @memberof SyncAction.SyncActionValue.TimeFormatAction
+             * @instance
+             */
             Object.defineProperty(TimeFormatAction.prototype, "_isTwentyFourHourFormatEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isTwentyFourHourFormatEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -17367,12 +18463,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            TimeFormatAction.decode = function decode(reader, length) {
+            TimeFormatAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.TimeFormatAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.isTwentyFourHourFormatEnabled = reader.bool();
@@ -17524,7 +18622,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * UnarchiveChatsSetting _unarchiveChats.
+             * @member {"unarchiveChats"|undefined} _unarchiveChats
+             * @memberof SyncAction.SyncActionValue.UnarchiveChatsSetting
+             * @instance
+             */
             Object.defineProperty(UnarchiveChatsSetting.prototype, "_unarchiveChats", {
                 get: $util.oneOfGetter($oneOfFields = ["unarchiveChats"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -17583,12 +18686,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            UnarchiveChatsSetting.decode = function decode(reader, length) {
+            UnarchiveChatsSetting.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.UnarchiveChatsSetting();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.unarchiveChats = reader.bool();
@@ -17740,7 +18845,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * UserStatusMuteAction _muted.
+             * @member {"muted"|undefined} _muted
+             * @memberof SyncAction.SyncActionValue.UserStatusMuteAction
+             * @instance
+             */
             Object.defineProperty(UserStatusMuteAction.prototype, "_muted", {
                 get: $util.oneOfGetter($oneOfFields = ["muted"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -17799,12 +18909,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            UserStatusMuteAction.decode = function decode(reader, length) {
+            UserStatusMuteAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.UserStatusMuteAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.muted = reader.bool();
@@ -17956,7 +19068,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * UsernameChatStartModeAction _chatStartMode.
+             * @member {"chatStartMode"|undefined} _chatStartMode
+             * @memberof SyncAction.SyncActionValue.UsernameChatStartModeAction
+             * @instance
+             */
             Object.defineProperty(UsernameChatStartModeAction.prototype, "_chatStartMode", {
                 get: $util.oneOfGetter($oneOfFields = ["chatStartMode"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -18015,12 +19132,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            UsernameChatStartModeAction.decode = function decode(reader, length) {
+            UsernameChatStartModeAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.UsernameChatStartModeAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.chatStartMode = reader.int32();
@@ -18205,7 +19324,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * WaffleAccountLinkStateAction _linkState.
+             * @member {"linkState"|undefined} _linkState
+             * @memberof SyncAction.SyncActionValue.WaffleAccountLinkStateAction
+             * @instance
+             */
             Object.defineProperty(WaffleAccountLinkStateAction.prototype, "_linkState", {
                 get: $util.oneOfGetter($oneOfFields = ["linkState"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -18264,12 +19388,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            WaffleAccountLinkStateAction.decode = function decode(reader, length) {
+            WaffleAccountLinkStateAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.WaffleAccountLinkStateAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 2: {
                             message.linkState = reader.int32();
@@ -18447,7 +19573,12 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * WamoUserIdentifierAction _identifier.
+             * @member {"identifier"|undefined} _identifier
+             * @memberof SyncAction.SyncActionValue.WamoUserIdentifierAction
+             * @instance
+             */
             Object.defineProperty(WamoUserIdentifierAction.prototype, "_identifier", {
                 get: $util.oneOfGetter($oneOfFields = ["identifier"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -18506,12 +19637,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            WamoUserIdentifierAction.decode = function decode(reader, length) {
+            WamoUserIdentifierAction.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.WamoUserIdentifierAction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.identifier = reader.string();
@@ -18793,85 +19926,155 @@ $root.SyncAction = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _callResult.
+         * @member {"callResult"|undefined} _callResult
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_callResult", {
             get: $util.oneOfGetter($oneOfFields = ["callResult"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _isDndMode.
+         * @member {"isDndMode"|undefined} _isDndMode
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_isDndMode", {
             get: $util.oneOfGetter($oneOfFields = ["isDndMode"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _silenceReason.
+         * @member {"silenceReason"|undefined} _silenceReason
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_silenceReason", {
             get: $util.oneOfGetter($oneOfFields = ["silenceReason"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _duration.
+         * @member {"duration"|undefined} _duration
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_duration", {
             get: $util.oneOfGetter($oneOfFields = ["duration"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _startTime.
+         * @member {"startTime"|undefined} _startTime
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_startTime", {
             get: $util.oneOfGetter($oneOfFields = ["startTime"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _isIncoming.
+         * @member {"isIncoming"|undefined} _isIncoming
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_isIncoming", {
             get: $util.oneOfGetter($oneOfFields = ["isIncoming"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _isVideo.
+         * @member {"isVideo"|undefined} _isVideo
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_isVideo", {
             get: $util.oneOfGetter($oneOfFields = ["isVideo"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _isCallLink.
+         * @member {"isCallLink"|undefined} _isCallLink
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_isCallLink", {
             get: $util.oneOfGetter($oneOfFields = ["isCallLink"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _callLinkToken.
+         * @member {"callLinkToken"|undefined} _callLinkToken
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_callLinkToken", {
             get: $util.oneOfGetter($oneOfFields = ["callLinkToken"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _scheduledCallId.
+         * @member {"scheduledCallId"|undefined} _scheduledCallId
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_scheduledCallId", {
             get: $util.oneOfGetter($oneOfFields = ["scheduledCallId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _callId.
+         * @member {"callId"|undefined} _callId
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_callId", {
             get: $util.oneOfGetter($oneOfFields = ["callId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _callCreatorJid.
+         * @member {"callCreatorJid"|undefined} _callCreatorJid
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_callCreatorJid", {
             get: $util.oneOfGetter($oneOfFields = ["callCreatorJid"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _groupJid.
+         * @member {"groupJid"|undefined} _groupJid
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_groupJid", {
             get: $util.oneOfGetter($oneOfFields = ["groupJid"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * CallLogRecord _callType.
+         * @member {"callType"|undefined} _callType
+         * @memberof SyncAction.CallLogRecord
+         * @instance
+         */
         Object.defineProperty(CallLogRecord.prototype, "_callType", {
             get: $util.oneOfGetter($oneOfFields = ["callType"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -18959,12 +20162,14 @@ $root.SyncAction = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        CallLogRecord.decode = function decode(reader, length) {
+        CallLogRecord.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.CallLogRecord();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
                 case 1: {
                         message.callResult = reader.int32();
@@ -19547,13 +20752,23 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ParticipantInfo _userJid.
+             * @member {"userJid"|undefined} _userJid
+             * @memberof SyncAction.CallLogRecord.ParticipantInfo
+             * @instance
+             */
             Object.defineProperty(ParticipantInfo.prototype, "_userJid", {
                 get: $util.oneOfGetter($oneOfFields = ["userJid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * ParticipantInfo _callResult.
+             * @member {"callResult"|undefined} _callResult
+             * @memberof SyncAction.CallLogRecord.ParticipantInfo
+             * @instance
+             */
             Object.defineProperty(ParticipantInfo.prototype, "_callResult", {
                 get: $util.oneOfGetter($oneOfFields = ["callResult"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -19614,12 +20829,14 @@ $root.SyncAction = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ParticipantInfo.decode = function decode(reader, length) {
+            ParticipantInfo.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.CallLogRecord.ParticipantInfo();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.userJid = reader.string();
@@ -19881,13 +21098,23 @@ $root.SyncAction = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * RecentEmojiWeight _emoji.
+         * @member {"emoji"|undefined} _emoji
+         * @memberof SyncAction.RecentEmojiWeight
+         * @instance
+         */
         Object.defineProperty(RecentEmojiWeight.prototype, "_emoji", {
             get: $util.oneOfGetter($oneOfFields = ["emoji"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * RecentEmojiWeight _weight.
+         * @member {"weight"|undefined} _weight
+         * @memberof SyncAction.RecentEmojiWeight
+         * @instance
+         */
         Object.defineProperty(RecentEmojiWeight.prototype, "_weight", {
             get: $util.oneOfGetter($oneOfFields = ["weight"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -19948,12 +21175,14 @@ $root.SyncAction = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        RecentEmojiWeight.decode = function decode(reader, length) {
+        RecentEmojiWeight.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.RecentEmojiWeight();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
                 case 1: {
                         message.emoji = reader.string();
@@ -20142,13 +21371,23 @@ $root.ChatLockSettings = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * ChatLockSettings _hideLockedChats.
+         * @member {"hideLockedChats"|undefined} _hideLockedChats
+         * @memberof ChatLockSettings.ChatLockSettings
+         * @instance
+         */
         Object.defineProperty(ChatLockSettings.prototype, "_hideLockedChats", {
             get: $util.oneOfGetter($oneOfFields = ["hideLockedChats"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * ChatLockSettings _secretCode.
+         * @member {"secretCode"|undefined} _secretCode
+         * @memberof ChatLockSettings.ChatLockSettings
+         * @instance
+         */
         Object.defineProperty(ChatLockSettings.prototype, "_secretCode", {
             get: $util.oneOfGetter($oneOfFields = ["secretCode"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -20209,12 +21448,14 @@ $root.ChatLockSettings = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        ChatLockSettings.decode = function decode(reader, length) {
+        ChatLockSettings.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ChatLockSettings.ChatLockSettings();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
                 case 1: {
                         message.hideLockedChats = reader.bool();
@@ -20428,19 +21669,34 @@ $root.UserPassword = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * UserPassword _encoding.
+         * @member {"encoding"|undefined} _encoding
+         * @memberof UserPassword.UserPassword
+         * @instance
+         */
         Object.defineProperty(UserPassword.prototype, "_encoding", {
             get: $util.oneOfGetter($oneOfFields = ["encoding"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * UserPassword _transformer.
+         * @member {"transformer"|undefined} _transformer
+         * @memberof UserPassword.UserPassword
+         * @instance
+         */
         Object.defineProperty(UserPassword.prototype, "_transformer", {
             get: $util.oneOfGetter($oneOfFields = ["transformer"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * UserPassword _transformedData.
+         * @member {"transformedData"|undefined} _transformedData
+         * @memberof UserPassword.UserPassword
+         * @instance
+         */
         Object.defineProperty(UserPassword.prototype, "_transformedData", {
             get: $util.oneOfGetter($oneOfFields = ["transformedData"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -20506,12 +21762,14 @@ $root.UserPassword = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        UserPassword.decode = function decode(reader, length) {
+        UserPassword.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UserPassword.UserPassword();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
                 case 1: {
                         message.encoding = reader.int32();
@@ -20809,13 +22067,23 @@ $root.UserPassword = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * TransformerArg _key.
+             * @member {"key"|undefined} _key
+             * @memberof UserPassword.UserPassword.TransformerArg
+             * @instance
+             */
             Object.defineProperty(TransformerArg.prototype, "_key", {
                 get: $util.oneOfGetter($oneOfFields = ["key"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * TransformerArg _value.
+             * @member {"value"|undefined} _value
+             * @memberof UserPassword.UserPassword.TransformerArg
+             * @instance
+             */
             Object.defineProperty(TransformerArg.prototype, "_value", {
                 get: $util.oneOfGetter($oneOfFields = ["value"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -20876,12 +22144,14 @@ $root.UserPassword = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            TransformerArg.decode = function decode(reader, length) {
+            TransformerArg.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UserPassword.UserPassword.TransformerArg();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.key = reader.string();
@@ -21127,12 +22397,14 @@ $root.UserPassword = (function() {
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                Value.decode = function decode(reader, length) {
+                Value.decode = function decode(reader, length, error) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
                     var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UserPassword.UserPassword.TransformerArg.Value();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
+                        if (tag === error)
+                            break;
                         switch (tag >>> 3) {
                         case 1: {
                                 message.asBlob = reader.bytes();
@@ -21332,13 +22604,23 @@ $root.DeviceCapabilities = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * DeviceCapabilities _chatLockSupportLevel.
+         * @member {"chatLockSupportLevel"|undefined} _chatLockSupportLevel
+         * @memberof DeviceCapabilities.DeviceCapabilities
+         * @instance
+         */
         Object.defineProperty(DeviceCapabilities.prototype, "_chatLockSupportLevel", {
             get: $util.oneOfGetter($oneOfFields = ["chatLockSupportLevel"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * DeviceCapabilities _lidMigration.
+         * @member {"lidMigration"|undefined} _lidMigration
+         * @memberof DeviceCapabilities.DeviceCapabilities
+         * @instance
+         */
         Object.defineProperty(DeviceCapabilities.prototype, "_lidMigration", {
             get: $util.oneOfGetter($oneOfFields = ["lidMigration"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -21399,12 +22681,14 @@ $root.DeviceCapabilities = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        DeviceCapabilities.decode = function decode(reader, length) {
+        DeviceCapabilities.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DeviceCapabilities.DeviceCapabilities();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
                 case 1: {
                         message.chatLockSupportLevel = reader.int32();
@@ -21615,7 +22899,12 @@ $root.DeviceCapabilities = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            // Virtual OneOf for proto3 optional field
+            /**
+             * LIDMigration _chatDbMigrationTimestamp.
+             * @member {"chatDbMigrationTimestamp"|undefined} _chatDbMigrationTimestamp
+             * @memberof DeviceCapabilities.DeviceCapabilities.LIDMigration
+             * @instance
+             */
             Object.defineProperty(LIDMigration.prototype, "_chatDbMigrationTimestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["chatDbMigrationTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -21674,12 +22963,14 @@ $root.DeviceCapabilities = (function() {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LIDMigration.decode = function decode(reader, length) {
+            LIDMigration.decode = function decode(reader, length, error) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
                 var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DeviceCapabilities.DeviceCapabilities.LIDMigration();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
+                    if (tag === error)
+                        break;
                     switch (tag >>> 3) {
                     case 1: {
                             message.chatDbMigrationTimestamp = reader.uint64();
@@ -21883,25 +23174,45 @@ $root.Protocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * LimitSharing _sharingLimited.
+         * @member {"sharingLimited"|undefined} _sharingLimited
+         * @memberof Protocol.LimitSharing
+         * @instance
+         */
         Object.defineProperty(LimitSharing.prototype, "_sharingLimited", {
             get: $util.oneOfGetter($oneOfFields = ["sharingLimited"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * LimitSharing _trigger.
+         * @member {"trigger"|undefined} _trigger
+         * @memberof Protocol.LimitSharing
+         * @instance
+         */
         Object.defineProperty(LimitSharing.prototype, "_trigger", {
             get: $util.oneOfGetter($oneOfFields = ["trigger"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * LimitSharing _limitSharingSettingTimestamp.
+         * @member {"limitSharingSettingTimestamp"|undefined} _limitSharingSettingTimestamp
+         * @memberof Protocol.LimitSharing
+         * @instance
+         */
         Object.defineProperty(LimitSharing.prototype, "_limitSharingSettingTimestamp", {
             get: $util.oneOfGetter($oneOfFields = ["limitSharingSettingTimestamp"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * LimitSharing _initiatedByMe.
+         * @member {"initiatedByMe"|undefined} _initiatedByMe
+         * @memberof Protocol.LimitSharing
+         * @instance
+         */
         Object.defineProperty(LimitSharing.prototype, "_initiatedByMe", {
             get: $util.oneOfGetter($oneOfFields = ["initiatedByMe"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -21966,12 +23277,14 @@ $root.Protocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        LimitSharing.decode = function decode(reader, length) {
+        LimitSharing.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Protocol.LimitSharing();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
                 case 1: {
                         message.sharingLimited = reader.bool();
@@ -22255,25 +23568,45 @@ $root.Protocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * MessageKey _remoteJid.
+         * @member {"remoteJid"|undefined} _remoteJid
+         * @memberof Protocol.MessageKey
+         * @instance
+         */
         Object.defineProperty(MessageKey.prototype, "_remoteJid", {
             get: $util.oneOfGetter($oneOfFields = ["remoteJid"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * MessageKey _fromMe.
+         * @member {"fromMe"|undefined} _fromMe
+         * @memberof Protocol.MessageKey
+         * @instance
+         */
         Object.defineProperty(MessageKey.prototype, "_fromMe", {
             get: $util.oneOfGetter($oneOfFields = ["fromMe"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * MessageKey _id.
+         * @member {"id"|undefined} _id
+         * @memberof Protocol.MessageKey
+         * @instance
+         */
         Object.defineProperty(MessageKey.prototype, "_id", {
             get: $util.oneOfGetter($oneOfFields = ["id"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * MessageKey _participant.
+         * @member {"participant"|undefined} _participant
+         * @memberof Protocol.MessageKey
+         * @instance
+         */
         Object.defineProperty(MessageKey.prototype, "_participant", {
             get: $util.oneOfGetter($oneOfFields = ["participant"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -22338,12 +23671,14 @@ $root.Protocol = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        MessageKey.decode = function decode(reader, length) {
+        MessageKey.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Protocol.MessageKey();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
                 case 1: {
                         message.remoteJid = reader.string();

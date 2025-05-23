@@ -1,4 +1,4 @@
-/*eslint-disable no-prototype-builtins, no-redeclare*/
+/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
 "use strict";
 
 var $protobuf = require("protobufjs/minimal");
@@ -63,7 +63,12 @@ $root.LidMigrationSyncPayload = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * LIDMigrationMappingSyncPayload _chatDbMigrationTimestamp.
+         * @member {"chatDbMigrationTimestamp"|undefined} _chatDbMigrationTimestamp
+         * @memberof LidMigrationSyncPayload.LIDMigrationMappingSyncPayload
+         * @instance
+         */
         Object.defineProperty(LIDMigrationMappingSyncPayload.prototype, "_chatDbMigrationTimestamp", {
             get: $util.oneOfGetter($oneOfFields = ["chatDbMigrationTimestamp"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -125,12 +130,14 @@ $root.LidMigrationSyncPayload = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        LIDMigrationMappingSyncPayload.decode = function decode(reader, length) {
+        LIDMigrationMappingSyncPayload.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.LidMigrationSyncPayload.LIDMigrationMappingSyncPayload();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
                 case 1: {
                         if (!(message.pnToLidMappings && message.pnToLidMappings.length))
@@ -295,8 +302,8 @@ $root.LidMigrationSyncPayload = (function() {
          * Properties of a LIDMigrationMapping.
          * @memberof LidMigrationSyncPayload
          * @interface ILIDMigrationMapping
-         * @property {number|Long} pn LIDMigrationMapping pn
-         * @property {number|Long} assignedLid LIDMigrationMapping assignedLid
+         * @property {number|Long|null} [pn] LIDMigrationMapping pn
+         * @property {number|Long|null} [assignedLid] LIDMigrationMapping assignedLid
          * @property {number|Long|null} [latestLid] LIDMigrationMapping latestLid
          */
 
@@ -317,19 +324,19 @@ $root.LidMigrationSyncPayload = (function() {
 
         /**
          * LIDMigrationMapping pn.
-         * @member {number|Long} pn
+         * @member {number|Long|null|undefined} pn
          * @memberof LidMigrationSyncPayload.LIDMigrationMapping
          * @instance
          */
-        LIDMigrationMapping.prototype.pn = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+        LIDMigrationMapping.prototype.pn = null;
 
         /**
          * LIDMigrationMapping assignedLid.
-         * @member {number|Long} assignedLid
+         * @member {number|Long|null|undefined} assignedLid
          * @memberof LidMigrationSyncPayload.LIDMigrationMapping
          * @instance
          */
-        LIDMigrationMapping.prototype.assignedLid = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+        LIDMigrationMapping.prototype.assignedLid = null;
 
         /**
          * LIDMigrationMapping latestLid.
@@ -342,7 +349,34 @@ $root.LidMigrationSyncPayload = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        // Virtual OneOf for proto3 optional field
+        /**
+         * LIDMigrationMapping _pn.
+         * @member {"pn"|undefined} _pn
+         * @memberof LidMigrationSyncPayload.LIDMigrationMapping
+         * @instance
+         */
+        Object.defineProperty(LIDMigrationMapping.prototype, "_pn", {
+            get: $util.oneOfGetter($oneOfFields = ["pn"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
+         * LIDMigrationMapping _assignedLid.
+         * @member {"assignedLid"|undefined} _assignedLid
+         * @memberof LidMigrationSyncPayload.LIDMigrationMapping
+         * @instance
+         */
+        Object.defineProperty(LIDMigrationMapping.prototype, "_assignedLid", {
+            get: $util.oneOfGetter($oneOfFields = ["assignedLid"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
+         * LIDMigrationMapping _latestLid.
+         * @member {"latestLid"|undefined} _latestLid
+         * @memberof LidMigrationSyncPayload.LIDMigrationMapping
+         * @instance
+         */
         Object.defineProperty(LIDMigrationMapping.prototype, "_latestLid", {
             get: $util.oneOfGetter($oneOfFields = ["latestLid"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -372,8 +406,10 @@ $root.LidMigrationSyncPayload = (function() {
         LIDMigrationMapping.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.pn);
-            writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.assignedLid);
+            if (message.pn != null && Object.hasOwnProperty.call(message, "pn"))
+                writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.pn);
+            if (message.assignedLid != null && Object.hasOwnProperty.call(message, "assignedLid"))
+                writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.assignedLid);
             if (message.latestLid != null && Object.hasOwnProperty.call(message, "latestLid"))
                 writer.uint32(/* id 3, wireType 0 =*/24).uint64(message.latestLid);
             return writer;
@@ -403,12 +439,14 @@ $root.LidMigrationSyncPayload = (function() {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        LIDMigrationMapping.decode = function decode(reader, length) {
+        LIDMigrationMapping.decode = function decode(reader, length, error) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
             var end = length === undefined ? reader.len : reader.pos + length, message = new $root.LidMigrationSyncPayload.LIDMigrationMapping();
             while (reader.pos < end) {
                 var tag = reader.uint32();
+                if (tag === error)
+                    break;
                 switch (tag >>> 3) {
                 case 1: {
                         message.pn = reader.uint64();
@@ -427,10 +465,6 @@ $root.LidMigrationSyncPayload = (function() {
                     break;
                 }
             }
-            if (!message.hasOwnProperty("pn"))
-                throw $util.ProtocolError("missing required 'pn'", { instance: message });
-            if (!message.hasOwnProperty("assignedLid"))
-                throw $util.ProtocolError("missing required 'assignedLid'", { instance: message });
             return message;
         };
 
@@ -462,10 +496,16 @@ $root.LidMigrationSyncPayload = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             var properties = {};
-            if (!$util.isInteger(message.pn) && !(message.pn && $util.isInteger(message.pn.low) && $util.isInteger(message.pn.high)))
-                return "pn: integer|Long expected";
-            if (!$util.isInteger(message.assignedLid) && !(message.assignedLid && $util.isInteger(message.assignedLid.low) && $util.isInteger(message.assignedLid.high)))
-                return "assignedLid: integer|Long expected";
+            if (message.pn != null && message.hasOwnProperty("pn")) {
+                properties._pn = 1;
+                if (!$util.isInteger(message.pn) && !(message.pn && $util.isInteger(message.pn.low) && $util.isInteger(message.pn.high)))
+                    return "pn: integer|Long expected";
+            }
+            if (message.assignedLid != null && message.hasOwnProperty("assignedLid")) {
+                properties._assignedLid = 1;
+                if (!$util.isInteger(message.assignedLid) && !(message.assignedLid && $util.isInteger(message.assignedLid.low) && $util.isInteger(message.assignedLid.high)))
+                    return "assignedLid: integer|Long expected";
+            }
             if (message.latestLid != null && message.hasOwnProperty("latestLid")) {
                 properties._latestLid = 1;
                 if (!$util.isInteger(message.latestLid) && !(message.latestLid && $util.isInteger(message.latestLid.low) && $util.isInteger(message.latestLid.high)))
@@ -529,28 +569,22 @@ $root.LidMigrationSyncPayload = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (options.defaults) {
-                if ($util.Long) {
-                    var long = new $util.Long(0, 0, true);
-                    object.pn = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
-                } else
-                    object.pn = options.longs === String ? "0" : 0;
-                if ($util.Long) {
-                    var long = new $util.Long(0, 0, true);
-                    object.assignedLid = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
-                } else
-                    object.assignedLid = options.longs === String ? "0" : 0;
-            }
-            if (message.pn != null && message.hasOwnProperty("pn"))
+            if (message.pn != null && message.hasOwnProperty("pn")) {
                 if (typeof message.pn === "number")
                     object.pn = options.longs === String ? String(message.pn) : message.pn;
                 else
                     object.pn = options.longs === String ? $util.Long.prototype.toString.call(message.pn) : options.longs === Number ? new $util.LongBits(message.pn.low >>> 0, message.pn.high >>> 0).toNumber(true) : message.pn;
-            if (message.assignedLid != null && message.hasOwnProperty("assignedLid"))
+                if (options.oneofs)
+                    object._pn = "pn";
+            }
+            if (message.assignedLid != null && message.hasOwnProperty("assignedLid")) {
                 if (typeof message.assignedLid === "number")
                     object.assignedLid = options.longs === String ? String(message.assignedLid) : message.assignedLid;
                 else
                     object.assignedLid = options.longs === String ? $util.Long.prototype.toString.call(message.assignedLid) : options.longs === Number ? new $util.LongBits(message.assignedLid.low >>> 0, message.assignedLid.high >>> 0).toNumber(true) : message.assignedLid;
+                if (options.oneofs)
+                    object._assignedLid = "assignedLid";
+            }
             if (message.latestLid != null && message.hasOwnProperty("latestLid")) {
                 if (typeof message.latestLid === "number")
                     object.latestLid = options.longs === String ? String(message.latestLid) : message.latestLid;
