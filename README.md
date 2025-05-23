@@ -707,49 +707,63 @@ Jika kamu menggunakan custom `getMessage()`, store ini juga dapat dijadikan refe
 - `id` atau biasa disebut juga `jid` adalah **identitas WhatsApp** dari seseorang atau grup yang menjadi tujuan pengiriman pesan.  
 - Format ID harus sesuai dengan jenis akun tujuan:
 
-### Jenis Format ID
+### Jenis Format ID WhatsApp
 
-- **Pengguna Pribadi (User):**  
-  Format:  
-  ```
-  [kode negara][nomor telepon]@s.whatsapp.net
-  ```  
-  Contoh:  
-  ```
-  628XXXXXXXXX@s.whatsapp.net
-  ```
+#### 1. Pengguna Pribadi (User)
+**Format:**
+```
+[kode negara][nomor telepon]@s.whatsapp.net
+```
+**Contoh:**
+```
+628123456789@s.whatsapp.net
+```
 
-- **Grup WhatsApp:**  
-  Format:  
-  ```
-  [timestamp grup dibuat]-[random id]@g.us
-  ```  
-  Contoh:  
-  ```
-  1234567890-987654321@g.us
-  ```
+#### 2. Grup WhatsApp
+**Format:**
+```
+[timestamp grup dibuat]-[random id]@g.us
+```
+**Contoh:**
+```
+1234567890-987654321@g.us
+```
 
-- **Broadcast (Daftar Siaran):**  
-  Format:  
-  ```
-  [timestamp]@broadcast
-  ```  
-  Contoh:
-  ```
-  1685539347@broadcast
-  ```
+#### 3. Broadcast (Daftar Siaran)
+**Format:**
+```
+[timestamp]@broadcast
+```
+**Contoh:**
+```
+1685539347@broadcast
+```
 
-- **Status (Story):**  
-  Format:  
-  ```
-  status@broadcast
-  ```
+#### 4. Status (Story)
+**Format:**
+```
+status@broadcast
+```
 
-> [!TIP]  
-> Kamu bisa mendapatkan `jid` dari pesan masuk lewat `m.key.remoteJid` atau dari respon event seperti `groupParticipantsUpdate`, `messages.upsert`, dll.
+#### 5. Newsletter (Channel WhatsApp)
+**Format:**
+```
+[numeric id]@newsletter
+```
+**Contoh:**
+```
+120363025487665599@newsletter
+```
 
-> [!CAUTION]  
-> Jangan mengubah format ID secara manual tanpa validasi. Salah format bisa menyebabkan pesan tidak terkirim atau error `bad jid`.
+> **TIP:**  
+> Kamu bisa mendapatkan `jid` dari:
+> - `m.key.remoteJid`
+> - `groupParticipantsUpdate`
+> - `messages.upsert`, dll
+
+> **CAUTION:**  
+> Jangan pernah mengubah format `jid` secara manual tanpa validasi.  
+> Salah format bisa menyebabkan error `bad jid` atau pesan tidak terkirim.
 
 ## Fungsi Utilitas (Utility Functions)
 
@@ -823,42 +837,6 @@ Butuh objek pesan (`WAMessage`). Bisa didapat dari store atau pesan sebelumnya.
 ```javascript
 const msg = getMessageFromStore() // Kamu buat sendiri sesuai struktur
 await sock.sendMessage(jid, { forward: msg, force: true })
-```
-
-### Pesan Media
-
-#### Gambar
-```javascript
-await sock.sendMessage(jid, {
-  image: fs.readFileSync('./gambar.jpg'),
-  caption: 'Ini gambar keren!'
-})
-```
-
-#### Video
-```javascript
-await sock.sendMessage(jid, {
-  video: fs.readFileSync('./video.mp4'),
-  caption: 'Tonton ini!'
-})
-```
-
-#### Dokumen
-```javascript
-await sock.sendMessage(jid, {
-  document: fs.readFileSync('./laporan.pdf'),
-  fileName: 'Laporan.pdf',
-  mimetype: 'application/pdf'
-})
-```
-
-#### Audio / Voice Note
-```javascript
-await sock.sendMessage(jid, {
-  audio: fs.readFileSync('./suara.mp3'),
-  mimetype: 'audio/mp4',
-  ptt: true // jika ingin dikirim sebagai voice note
-})
 ```
 
 ### Pesan Interaktif
